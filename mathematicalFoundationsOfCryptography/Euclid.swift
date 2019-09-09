@@ -44,7 +44,7 @@ class Euclid{
         return nil
     }
     
-    //Расширенный алгоритм Эвклида
+    //Расширенный алгоритм Евклида
     //Алгоритм Кнута для нахождений линейного разложения НОД
     //aU+bV=d=(a,b)
     public func extendedEuclid(_ firstNumber: Int, _ secondNumder: Int) -> (Int,Int) {
