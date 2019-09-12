@@ -14,10 +14,7 @@ class MainPageTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let item = Model(name: "Алгоритм Евклида", about: "by sergey_sedov")
-        let item2 = Model(name: "secon lesson", about: "by sergey_sedov")
-        allAlgorithm.append(item)
-        allAlgorithm.append(item2)
+        allAlgorithm = Model.returnArr()
     }
 
     // MARK: - Table view data source
