@@ -10,6 +10,10 @@ import UIKit
 
 class MainPageTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var detailLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +23,11 @@ class MainPageTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    public func refresh(_ model: Model) {
+        nameLabel.text = model.name
+        detailLabel.text = model.about
     }
 
 }
