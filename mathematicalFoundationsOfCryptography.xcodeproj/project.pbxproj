@@ -7,19 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1875EB252327A50600B78775 /* MainPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875EB242327A50600B78775 /* MainPageTableViewController.swift */; };
+		1875EB272327A8C400B78775 /* MainPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875EB262327A8C400B78775 /* MainPageTableViewCell.swift */; };
+		1875EB292327AAF500B78775 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875EB282327AAF500B78775 /* Model.swift */; };
+		188DFA852327C0660071663B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 188DFA842327C0660071663B /* Main.storyboard */; };
+		18951AF62329392F001039A9 /* EuclidPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18951AF52329392F001039A9 /* EuclidPageViewController.swift */; };
 		18B007672326CC4500F4D666 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B007662326CC4500F4D666 /* AppDelegate.swift */; };
 		18B007692326CC4500F4D666 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B007682326CC4500F4D666 /* ViewController.swift */; };
-		18B0076C2326CC4500F4D666 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B0076A2326CC4500F4D666 /* Main.storyboard */; };
 		18B0076E2326CC4700F4D666 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18B0076D2326CC4700F4D666 /* Assets.xcassets */; };
 		18B007712326CC4700F4D666 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B0076F2326CC4700F4D666 /* LaunchScreen.storyboard */; };
 		18B007792326CD2500F4D666 /* Euclid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B007782326CD2500F4D666 /* Euclid.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1875EB242327A50600B78775 /* MainPageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageTableViewController.swift; sourceTree = "<group>"; };
+		1875EB262327A8C400B78775 /* MainPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageTableViewCell.swift; sourceTree = "<group>"; };
+		1875EB282327AAF500B78775 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		188DFA842327C0660071663B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		18951AF52329392F001039A9 /* EuclidPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EuclidPageViewController.swift; sourceTree = "<group>"; };
 		18B007632326CC4500F4D666 /* mathematicalFoundationsOfCryptography.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mathematicalFoundationsOfCryptography.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B007662326CC4500F4D666 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18B007682326CC4500F4D666 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		18B0076B2326CC4500F4D666 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18B0076D2326CC4700F4D666 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18B007702326CC4700F4D666 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18B007722326CC4700F4D666 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,10 +66,14 @@
 			children = (
 				18B007662326CC4500F4D666 /* AppDelegate.swift */,
 				18B007682326CC4500F4D666 /* ViewController.swift */,
-				18B007782326CD2500F4D666 /* Euclid.swift */,
-				18B0076A2326CC4500F4D666 /* Main.storyboard */,
+				1875EB262327A8C400B78775 /* MainPageTableViewCell.swift */,
+				1875EB242327A50600B78775 /* MainPageTableViewController.swift */,
+				18951AF52329392F001039A9 /* EuclidPageViewController.swift */,
+				188DFA842327C0660071663B /* Main.storyboard */,
 				18B0076D2326CC4700F4D666 /* Assets.xcassets */,
 				18B0076F2326CC4700F4D666 /* LaunchScreen.storyboard */,
+				1875EB282327AAF500B78775 /* Model.swift */,
+				18B007782326CD2500F4D666 /* Euclid.swift */,
 				18B007722326CC4700F4D666 /* Info.plist */,
 			);
 			path = mathematicalFoundationsOfCryptography;
@@ -125,9 +137,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				188DFA852327C0660071663B /* Main.storyboard in Resources */,
 				18B007712326CC4700F4D666 /* LaunchScreen.storyboard in Resources */,
 				18B0076E2326CC4700F4D666 /* Assets.xcassets in Resources */,
-				18B0076C2326CC4500F4D666 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,21 +152,17 @@
 			files = (
 				18B007792326CD2500F4D666 /* Euclid.swift in Sources */,
 				18B007692326CC4500F4D666 /* ViewController.swift in Sources */,
+				18951AF62329392F001039A9 /* EuclidPageViewController.swift in Sources */,
+				1875EB272327A8C400B78775 /* MainPageTableViewCell.swift in Sources */,
+				1875EB292327AAF500B78775 /* Model.swift in Sources */,
 				18B007672326CC4500F4D666 /* AppDelegate.swift in Sources */,
+				1875EB252327A50600B78775 /* MainPageTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		18B0076A2326CC4500F4D666 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				18B0076B2326CC4500F4D666 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		18B0076F2326CC4700F4D666 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -289,6 +297,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QGL33QJD4K;
 				INFOPLIST_FILE = mathematicalFoundationsOfCryptography/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,7 +305,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = SergeySedov.mathematicalFoundationsOfCryptography;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -307,6 +316,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QGL33QJD4K;
 				INFOPLIST_FILE = mathematicalFoundationsOfCryptography/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -314,7 +324,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = SergeySedov.mathematicalFoundationsOfCryptography;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
