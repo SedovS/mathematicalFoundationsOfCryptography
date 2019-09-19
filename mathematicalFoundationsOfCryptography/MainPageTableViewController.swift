@@ -38,7 +38,7 @@ class MainPageTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "mainPageToEuclid", sender: nil)
+        self.performSegue(withIdentifier: "\(allAlgorithm[indexPath.row].seguaIdentifier)", sender: nil)
         
     }
     

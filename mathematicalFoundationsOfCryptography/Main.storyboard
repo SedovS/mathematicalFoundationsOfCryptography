@@ -69,6 +69,7 @@
                     <navigationItem key="navigationItem" title="Выбор алгоритма" id="hbs-Js-oiZ"/>
                     <connections>
                         <segue destination="yZG-0Q-726" kind="show" identifier="mainPageToEuclid" id="a4Z-oR-eaa"/>
+                        <segue destination="7AG-yT-uEI" kind="show" identifier="mainPageToEulerAbdCDN" id="iBC-nK-4yc"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cMG-co-Q3R" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -193,6 +194,85 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pxd-of-nva" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="256.52173913043481" y="246.19565217391306"/>
+        </scene>
+        <!--Euler AndCDN Page View Controller-->
+        <scene sceneID="HsN-JF-ACc">
+            <objects>
+                <viewController id="7AG-yT-uEI" customClass="EulerAndCDNPageViewController" customModule="mathematicalFoundationsOfCryptography" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xSu-8v-Eon">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Y97-T7-SAf">
+                                <rect key="frame" x="30" y="79" width="354" height="29"/>
+                                <segments>
+                                    <segment title="Каноническое разложение"/>
+                                    <segment title="Функция Эйлера"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите число" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Hr-wQ-ZqI">
+                                <rect key="frame" x="127" y="132" width="160" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="L04-3x-ynS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="15" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="YZe-d6-bxz">
+                                <rect key="frame" x="81" y="184" width="252" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bV-mL-2Sb">
+                                <rect key="frame" x="157" y="244" width="100" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="AIE-cp-iVR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="Поиск"/>
+                                <connections>
+                                    <action selector="searchButton:" destination="7AG-yT-uEI" eventType="touchUpInside" id="czR-ll-9kU"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="Jew-fW-KMu">
+                                <rect key="frame" x="77" y="298" width="260" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="391-TE-ORx"/>
+                                    <constraint firstAttribute="width" constant="260" id="JEB-oV-xsB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Jew-fW-KMu" firstAttribute="top" secondItem="7bV-mL-2Sb" secondAttribute="bottom" constant="10" id="2ex-WK-ZZ2"/>
+                            <constraint firstItem="bkE-Sx-UxQ" firstAttribute="trailing" secondItem="Y97-T7-SAf" secondAttribute="trailing" constant="30" id="3oT-aU-ru9"/>
+                            <constraint firstItem="4Hr-wQ-ZqI" firstAttribute="centerX" secondItem="xSu-8v-Eon" secondAttribute="centerX" id="5WC-YD-rvA"/>
+                            <constraint firstItem="Y97-T7-SAf" firstAttribute="leading" secondItem="bkE-Sx-UxQ" secondAttribute="leading" constant="30" id="HCs-kT-7Tc"/>
+                            <constraint firstItem="YZe-d6-bxz" firstAttribute="leading" secondItem="bkE-Sx-UxQ" secondAttribute="leading" constant="81" id="NOe-lG-ZtB"/>
+                            <constraint firstItem="Y97-T7-SAf" firstAttribute="top" secondItem="bkE-Sx-UxQ" secondAttribute="top" constant="15" id="Qvf-wS-2Pv"/>
+                            <constraint firstItem="Jew-fW-KMu" firstAttribute="centerX" secondItem="xSu-8v-Eon" secondAttribute="centerX" id="TO9-6I-dxn"/>
+                            <constraint firstItem="YZe-d6-bxz" firstAttribute="top" secondItem="4Hr-wQ-ZqI" secondAttribute="bottom" constant="25" id="hGy-QX-xc8"/>
+                            <constraint firstItem="bkE-Sx-UxQ" firstAttribute="trailing" secondItem="YZe-d6-bxz" secondAttribute="trailing" constant="81" id="mgq-bi-teH"/>
+                            <constraint firstItem="7bV-mL-2Sb" firstAttribute="centerX" secondItem="xSu-8v-Eon" secondAttribute="centerX" id="rgS-no-96p"/>
+                            <constraint firstItem="4Hr-wQ-ZqI" firstAttribute="top" secondItem="Y97-T7-SAf" secondAttribute="bottom" constant="25" id="rvl-j2-Bxr"/>
+                            <constraint firstItem="7bV-mL-2Sb" firstAttribute="top" secondItem="YZe-d6-bxz" secondAttribute="bottom" constant="30" id="z2q-ee-gU0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bkE-Sx-UxQ"/>
+                    </view>
+                    <connections>
+                        <outlet property="numberTextField" destination="YZe-d6-bxz" id="a3U-h5-5DD"/>
+                        <outlet property="resultLabel" destination="Jew-fW-KMu" id="PUc-Wq-ov0"/>
+                        <outlet property="segmentControl" destination="Y97-T7-SAf" id="hTa-TJ-x9b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gBt-q0-j4t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="257" y="995"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6ye-OG-rPe">

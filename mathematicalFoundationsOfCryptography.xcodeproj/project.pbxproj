@@ -17,6 +17,8 @@
 		18B0076E2326CC4700F4D666 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18B0076D2326CC4700F4D666 /* Assets.xcassets */; };
 		18B007712326CC4700F4D666 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B0076F2326CC4700F4D666 /* LaunchScreen.storyboard */; };
 		18B007792326CD2500F4D666 /* Euclid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B007782326CD2500F4D666 /* Euclid.swift */; };
+		18ED69BE23337FD3008C3A23 /* Algorithms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED69BD23337FD3008C3A23 /* Algorithms.swift */; };
+		18ED69C0233381D8008C3A23 /* EulerAndCDNPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED69BF233381D8008C3A23 /* EulerAndCDNPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		18B007702326CC4700F4D666 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18B007722326CC4700F4D666 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18B007782326CD2500F4D666 /* Euclid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Euclid.swift; sourceTree = "<group>"; };
+		18ED69BD23337FD3008C3A23 /* Algorithms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Algorithms.swift; sourceTree = "<group>"; };
+		18ED69BF233381D8008C3A23 /* EulerAndCDNPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EulerAndCDNPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,11 +73,13 @@
 				1875EB262327A8C400B78775 /* MainPageTableViewCell.swift */,
 				1875EB242327A50600B78775 /* MainPageTableViewController.swift */,
 				18951AF52329392F001039A9 /* EuclidPageViewController.swift */,
+				18ED69BF233381D8008C3A23 /* EulerAndCDNPageViewController.swift */,
 				188DFA842327C0660071663B /* Main.storyboard */,
 				18B0076D2326CC4700F4D666 /* Assets.xcassets */,
 				18B0076F2326CC4700F4D666 /* LaunchScreen.storyboard */,
 				1875EB282327AAF500B78775 /* Model.swift */,
 				18B007782326CD2500F4D666 /* Euclid.swift */,
+				18ED69BD23337FD3008C3A23 /* Algorithms.swift */,
 				18B007722326CC4700F4D666 /* Info.plist */,
 			);
 			path = mathematicalFoundationsOfCryptography;
@@ -155,6 +161,8 @@
 				18951AF62329392F001039A9 /* EuclidPageViewController.swift in Sources */,
 				1875EB272327A8C400B78775 /* MainPageTableViewCell.swift in Sources */,
 				1875EB292327AAF500B78775 /* Model.swift in Sources */,
+				18ED69BE23337FD3008C3A23 /* Algorithms.swift in Sources */,
+				18ED69C0233381D8008C3A23 /* EulerAndCDNPageViewController.swift in Sources */,
 				18B007672326CC4500F4D666 /* AppDelegate.swift in Sources */,
 				1875EB252327A50600B78775 /* MainPageTableViewController.swift in Sources */,
 			);
