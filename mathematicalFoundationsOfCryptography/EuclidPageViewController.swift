@@ -38,29 +38,37 @@ class EuclidPageViewController: UIViewController {
     
     
     func search() -> Void {
+        guard let firstNumber = Int(firstTextField.text!) else {return}
+        guard firstNumber != 0 else {return}
+        guard let secondNumber = Int(secondTextField.text!) else {return}
+        guard secondNumber != 0 else {return}
+        
         showSolutionOutletButton.isEnabled = true
         scrollView.removeFromSuperview()
-        
         view.endEditing(true) //убираем клавиатуру
         let euclid = Euclid()
 
-        let gcd = euclid.greatestCommonDivisor(Int(firstTextField.text!)!, Int(secondTextField.text!)!)
+        let gcd = euclid.greatestCommonDivisor(firstNumber, secondNumber)
         if segmentedControl.selectedSegmentIndex == 0 {
-            resultLabel.text = "НОД \(firstTextField.text!) и \(secondTextField.text!) равен \(gcd)"
+            resultLabel.text = "НОД \(firstNumber) и \(secondNumber) равен \(gcd)"
         } else {
-            let extended = euclid.extendedEuclid(Int(firstTextField.text!)!, Int(secondTextField.text!)!)
-            resultLabel.text = "\(firstTextField.text!)U + \(secondTextField.text!)V = d \n U=\(extended.0), V=\(extended.1), d=\(gcd)"
+            let extended = euclid.extendedEuclid(firstNumber, secondNumber)
+            resultLabel.text = "\(firstNumber)U + \(secondNumber)V = d \n U=\(extended.0), V=\(extended.1), d=\(gcd)"
         }
     }
     
     private func showSolution() -> Void {
+        guard let firstNumber = Int(firstTextField.text!) else {return}
+        guard firstNumber != 0 else {return}
+        guard let secondNumber = Int(secondTextField.text!) else {return}
+        guard secondNumber != 0 else {return}
         
         let euclid = Euclid()
         showSolutionOutletButton.isEnabled = false
         if segmentedControl.selectedSegmentIndex == 0 {
-            scrollView = euclid.solution(view, firstNumber: Int(firstTextField.text!)!, secondNumber: Int(secondTextField.text!)!, numberColumn: 2)
+            scrollView = euclid.solution(view, firstNumber: firstNumber, secondNumber: secondNumber, numberColumn: 2)
         } else {
-            scrollView = euclid.solution(view, firstNumber: Int(firstTextField.text!)!, secondNumber: Int(secondTextField.text!)!, numberColumn: 3)
+            scrollView = euclid.solution(view, firstNumber: firstNumber, secondNumber: secondNumber, numberColumn: 3)
         }
     }
 

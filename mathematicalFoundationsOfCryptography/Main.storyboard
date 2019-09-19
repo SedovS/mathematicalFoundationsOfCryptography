@@ -18,6 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="sectionIndexBackgroundColor" red="0.82936832699999996" green="0.88659285259999998" blue="0.94901960780000005" alpha="0.73132491440000003" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="mainPageCell" rowHeight="100" id="Xep-bq-1YV" customClass="MainPageTableViewCell" customModule="mathematicalFoundationsOfCryptography" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="100"/>
@@ -53,6 +54,7 @@
                                         <constraint firstItem="lNg-Mp-Xy1" firstAttribute="leading" secondItem="jgt-kD-szG" secondAttribute="leadingMargin" id="rxo-eY-ipR"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.82936832699999996" green="0.88659285259999998" blue="0.94901960780000005" alpha="0.73132491440000003" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="detailLabel" destination="4O0-Eq-gVi" id="phY-8c-NqU"/>
                                     <outlet property="nameLabel" destination="lNg-Mp-Xy1" id="yxF-YX-Uia"/>
