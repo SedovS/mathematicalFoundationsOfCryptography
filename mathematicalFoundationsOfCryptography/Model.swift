@@ -29,8 +29,12 @@ class Model {
         var allAlgorithm = [Model]()
         let item = Model(name: "Алгоритм Евклида", about: "by sergey_sedov 1-я лекция", seguaIdentifier: "mainPageToEuclid")
         let item2 = Model(name: "Каноническое разложение числа \n Функция Эйлера", about: "by sergey_sedov 2-я лекция", seguaIdentifier: "mainPageToEulerAbdCDN")
+        let item3 = Model(name: "Нахождение обатного элемента", about: "by sergey_sedov 3-я лекция", seguaIdentifier: "mainPageToInverseElement")
+        let item4 = Model(name: "Решение сравненией (для простого и составного m)", about: "by sergey_sedov 3-я лекция", seguaIdentifier: "mainPageToDicisionComparisons")
         allAlgorithm.append(item)
         allAlgorithm.append(item2)
+        allAlgorithm.append(item3)
+        allAlgorithm.append(item4)
        
         return allAlgorithm
     }
