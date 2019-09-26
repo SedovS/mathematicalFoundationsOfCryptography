@@ -43,7 +43,7 @@ class DecisionComparisonsViewController: UIViewController {
         
         if let inverseElement = Algorithms.findInverseElement(a, modul) {
             //m простое
-            resultLabel.text = "\(b*inverseElement%modul) + \(modul)k, k∈Z"
+            resultLabel.text = "X= \(b*inverseElement%modul) + \(modul)k, k∈Z"
         } else {
             //m составное
             scroll(a: a, b: b, modul: modul)
