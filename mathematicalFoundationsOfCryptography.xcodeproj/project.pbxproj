@@ -12,6 +12,8 @@
 		1875EB292327AAF500B78775 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875EB282327AAF500B78775 /* Model.swift */; };
 		188DFA852327C0660071663B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 188DFA842327C0660071663B /* Main.storyboard */; };
 		18951AF62329392F001039A9 /* EuclidPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18951AF52329392F001039A9 /* EuclidPageViewController.swift */; };
+		18A24D7F233CBBE600F1B7CE /* DecisionComparisonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A24D7E233CBBE600F1B7CE /* DecisionComparisonsViewController.swift */; };
+		18A24D81233CDE4600F1B7CE /* InverseElementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A24D80233CDE4600F1B7CE /* InverseElementViewController.swift */; };
 		18B007672326CC4500F4D666 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B007662326CC4500F4D666 /* AppDelegate.swift */; };
 		18B007692326CC4500F4D666 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B007682326CC4500F4D666 /* ViewController.swift */; };
 		18B0076E2326CC4700F4D666 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18B0076D2326CC4700F4D666 /* Assets.xcassets */; };
@@ -27,6 +29,8 @@
 		1875EB282327AAF500B78775 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		188DFA842327C0660071663B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		18951AF52329392F001039A9 /* EuclidPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EuclidPageViewController.swift; sourceTree = "<group>"; };
+		18A24D7E233CBBE600F1B7CE /* DecisionComparisonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionComparisonsViewController.swift; sourceTree = "<group>"; };
+		18A24D80233CDE4600F1B7CE /* InverseElementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InverseElementViewController.swift; sourceTree = "<group>"; };
 		18B007632326CC4500F4D666 /* mathematicalFoundationsOfCryptography.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mathematicalFoundationsOfCryptography.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B007662326CC4500F4D666 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18B007682326CC4500F4D666 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +78,8 @@
 				1875EB242327A50600B78775 /* MainPageTableViewController.swift */,
 				18951AF52329392F001039A9 /* EuclidPageViewController.swift */,
 				18ED69BF233381D8008C3A23 /* EulerAndCDNPageViewController.swift */,
+				18A24D80233CDE4600F1B7CE /* InverseElementViewController.swift */,
+				18A24D7E233CBBE600F1B7CE /* DecisionComparisonsViewController.swift */,
 				188DFA842327C0660071663B /* Main.storyboard */,
 				18B0076D2326CC4700F4D666 /* Assets.xcassets */,
 				18B0076F2326CC4700F4D666 /* LaunchScreen.storyboard */,
@@ -161,10 +167,12 @@
 				18951AF62329392F001039A9 /* EuclidPageViewController.swift in Sources */,
 				1875EB272327A8C400B78775 /* MainPageTableViewCell.swift in Sources */,
 				1875EB292327AAF500B78775 /* Model.swift in Sources */,
+				18A24D7F233CBBE600F1B7CE /* DecisionComparisonsViewController.swift in Sources */,
 				18ED69BE23337FD3008C3A23 /* Algorithms.swift in Sources */,
 				18ED69C0233381D8008C3A23 /* EulerAndCDNPageViewController.swift in Sources */,
 				18B007672326CC4500F4D666 /* AppDelegate.swift in Sources */,
 				1875EB252327A50600B78775 /* MainPageTableViewController.swift in Sources */,
+				18A24D81233CDE4600F1B7CE /* InverseElementViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
