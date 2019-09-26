@@ -78,6 +78,7 @@ class Algorithms {
     //F(a) = (p1^k1 - p1^(k1-1)) * ... * (ps^ks - ps^(ks-1))
     //a - каноническое разложение числа на простые множители
     // a = p1^k1 * p2^k2 * ... * ps^ks
+    //return F(a)
     public static func functionEulers(_ number: Int) -> Int {
         let number = number
         let array = canonicalDecompositionNumber(number)
@@ -105,4 +106,16 @@ class Algorithms {
         return result
     }
     
+    //Нахождение обратного элемента
+    //По теореме эйлера
+    //U=a^(F(m)-1)
+    //Находится только когда НОД(a,m)=1
+    //return U
+    public static func findInverseElement(_ a: Int, _ modul: Int ) -> Int? {
+        let euclid = Euclid()
+        guard euclid.greatestCommonDivisor(a, modul) == 1 else {return nil}
+        let inverseElement = Int(pow(Double(a), Double(functionEulers(modul)-1))) % modul //(a^(F(m)-1))(mod m)
+        
+        return inverseElement
+    }
 }
