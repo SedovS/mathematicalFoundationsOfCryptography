@@ -46,11 +46,11 @@ class DecisionComparisonsViewController: UIViewController {
             resultLabel.text = "X= \(b*inverseElement%modul) + \(modul)k, k∈Z"
         } else {
             //m составное
-            scroll(a: a, b: b, modul: modul)
+            compositeM(a: a, b: b, modul: modul)
         }
     }
     
-    private func scroll(a : Int, b : Int, modul : Int) -> Void {
+    private func compositeM(a : Int, b : Int, modul : Int) -> Void {
         let euclid = Euclid()
         let d = euclid.greatestCommonDivisor(a, modul)
         if b%d != 0 {
