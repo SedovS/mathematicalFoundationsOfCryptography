@@ -18,14 +18,10 @@ class EuclidPageViewController: UIViewController {
     
     @IBOutlet weak var showSolutionOutletButton: UIButton!
     @IBAction func showSolutionButton(_ sender: UIButton) {
-        if firstTextField.text != "" && secondTextField.text != "" {
-            showSolution()
-        }
+        showSolution()
     }
     @IBAction func searchButton(_ sender: UIButton) {
-        if firstTextField.text != "" && secondTextField.text != "" {
             search()
-        }
     }
     
     var scrollView = UIScrollView()
@@ -38,6 +34,7 @@ class EuclidPageViewController: UIViewController {
     
     
     func search() -> Void {
+        resultLabel.text = ""
         guard let firstNumber = Int(firstTextField.text!) else {return}
         guard firstNumber != 0 else {return}
         guard let secondNumber = Int(secondTextField.text!) else {return}
