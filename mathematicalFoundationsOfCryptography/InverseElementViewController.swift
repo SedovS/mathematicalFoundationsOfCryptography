@@ -33,7 +33,7 @@ class InverseElementViewController: UIViewController {
         guard modul != 0 else {return}
         view.endEditing(true) //убираем клавиатуру
         
-        guard let result = Algorithms.findInverseElement(number, modul) else {resultLabel.text = "(\(number),\(modul) != 1 /n Нельзя найти обратный элемент "
+        guard let result = Algorithms.findInverseElement(number, modul) else {resultLabel.text = "(\(number),\(modul)) != 1 /n Нельзя найти обратный элемент "
             return
         }
         resultLabel.text = "Обратный элемент равен \n \(result)"
