@@ -27,7 +27,6 @@ class DecisionComparisonsViewController: UIViewController {
     }
     
     private func result(){
-        view.endEditing(true) //убираем клавиатуру
         scrollView.removeFromSuperview()
         resultLabel.text = ""
         
@@ -37,6 +36,7 @@ class DecisionComparisonsViewController: UIViewController {
         guard a != 0 else {return}
         guard b != 0 else {return}
         guard modul != 0 else {return}
+        view.endEditing(true) //убираем клавиатуру
         
         a = a % modul
         b = b % modul
