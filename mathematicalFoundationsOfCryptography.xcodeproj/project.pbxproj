@@ -10,6 +10,7 @@
 		1875EB252327A50600B78775 /* MainPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875EB242327A50600B78775 /* MainPageTableViewController.swift */; };
 		1875EB272327A8C400B78775 /* MainPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875EB262327A8C400B78775 /* MainPageTableViewCell.swift */; };
 		1875EB292327AAF500B78775 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875EB282327AAF500B78775 /* Model.swift */; };
+		18832724233E574400F1AE99 /* ChineseTheoremViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18832723233E574400F1AE99 /* ChineseTheoremViewController.swift */; };
 		188DFA852327C0660071663B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 188DFA842327C0660071663B /* Main.storyboard */; };
 		18951AF62329392F001039A9 /* EuclidPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18951AF52329392F001039A9 /* EuclidPageViewController.swift */; };
 		18A24D7F233CBBE600F1B7CE /* DecisionComparisonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A24D7E233CBBE600F1B7CE /* DecisionComparisonsViewController.swift */; };
@@ -27,6 +28,7 @@
 		1875EB242327A50600B78775 /* MainPageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageTableViewController.swift; sourceTree = "<group>"; };
 		1875EB262327A8C400B78775 /* MainPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageTableViewCell.swift; sourceTree = "<group>"; };
 		1875EB282327AAF500B78775 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		18832723233E574400F1AE99 /* ChineseTheoremViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChineseTheoremViewController.swift; sourceTree = "<group>"; };
 		188DFA842327C0660071663B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		18951AF52329392F001039A9 /* EuclidPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EuclidPageViewController.swift; sourceTree = "<group>"; };
 		18A24D7E233CBBE600F1B7CE /* DecisionComparisonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionComparisonsViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				18ED69BF233381D8008C3A23 /* EulerAndCDNPageViewController.swift */,
 				18A24D80233CDE4600F1B7CE /* InverseElementViewController.swift */,
 				18A24D7E233CBBE600F1B7CE /* DecisionComparisonsViewController.swift */,
+				18832723233E574400F1AE99 /* ChineseTheoremViewController.swift */,
 				188DFA842327C0660071663B /* Main.storyboard */,
 				18B0076D2326CC4700F4D666 /* Assets.xcassets */,
 				18B0076F2326CC4700F4D666 /* LaunchScreen.storyboard */,
@@ -173,6 +176,7 @@
 				18B007672326CC4500F4D666 /* AppDelegate.swift in Sources */,
 				1875EB252327A50600B78775 /* MainPageTableViewController.swift in Sources */,
 				18A24D81233CDE4600F1B7CE /* InverseElementViewController.swift in Sources */,
+				18832724233E574400F1AE99 /* ChineseTheoremViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
