@@ -118,4 +118,33 @@ class Algorithms {
         
         return inverseElement
     }
+    
+    
+    
+    //Китайская теорема об остатках
+    //M = Multiplication (mi)
+    //Mi = M / mi
+    //yi = inverse(Mi)(mod mi)
+    ////result = Summ((ai*Mi*yi(modM)))
+    //return result
+    public static func chineseRemeinderTheorem(arrayNumber: [Int], arrayModul: [Int]) -> Int {
+        
+        var multiplicationModul = 1
+        var resultX = 0
+        
+        for arr in arrayModul {
+            multiplicationModul *= arr
+        }
+        
+        //x = Summ((ai*Mi*yi(modM)))
+        for i in 0..<arrayModul.count {
+            let m = multiplicationModul / arrayModul[i]
+            let y = findInverseElement(m, arrayModul[i])
+            resultX += (arrayNumber[i]*m*y!) % multiplicationModul
+            
+        }
+        
+        return resultX
+    }
+    
 }
