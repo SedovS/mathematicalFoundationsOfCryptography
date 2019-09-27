@@ -26,6 +26,7 @@ class InverseElementViewController: UIViewController {
     }
     
     private func search() -> Void {
+        resultLabel.text = ""
         guard let number = Int(numberTextField.text!) else {return}
         guard let modul = Int(modulTextField.text!) else {return}
         guard number != 0 else {return}
