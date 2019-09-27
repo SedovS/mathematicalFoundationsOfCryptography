@@ -139,11 +139,10 @@ class Algorithms {
         //x = Summ((ai*Mi*yi(modM)))
         for i in 0..<arrayModul.count {
             let m = multiplicationModul / arrayModul[i]
-            let y = findInverseElement(m, arrayModul[i])
-            resultX += (arrayNumber[i]*m*y!) % multiplicationModul
-            
+            let y = findInverseElement((m%arrayModul[i]), arrayModul[i])
+            guard let yi = y else {return 0}
+            resultX += (arrayNumber[i]*m*yi) % multiplicationModul
         }
-        
         return resultX
     }
     

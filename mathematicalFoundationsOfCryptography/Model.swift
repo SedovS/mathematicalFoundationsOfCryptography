@@ -31,11 +31,12 @@ class Model {
         let item2 = Model(name: "Каноническое разложение числа \n Функция Эйлера", about: "by sergey_sedov 2-я лекция", seguaIdentifier: "mainPageToEulerAbdCDN")
         let item3 = Model(name: "Нахождение обатного элемента", about: "by sergey_sedov 3-я лекция", seguaIdentifier: "mainPageToInverseElement")
         let item4 = Model(name: "Решение сравненией (для простого и составного m)", about: "by sergey_sedov 3-я лекция", seguaIdentifier: "mainPageToDicisionComparisons")
+        let item5 = Model(name: "Китайская теорема", about:"by sergey_sedov 4-я лекция" , seguaIdentifier: "mainPageToChineseTheorem")
         allAlgorithm.append(item)
         allAlgorithm.append(item2)
         allAlgorithm.append(item3)
         allAlgorithm.append(item4)
-       
+        allAlgorithm.append(item5)
         return allAlgorithm
     }
     
