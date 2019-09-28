@@ -106,7 +106,7 @@ class ChineseTheoremViewController: UIViewController {
         backButton.titleLabel?.font = UIFont.systemFont(ofSize: 20)
         
         y += height
-        resultLabel.frame = CGRect(x: 0, y: y, width: Int(secondView.frame.width), height: 90)
+        resultLabel.frame = CGRect(x: 0, y: y, width: Int(secondView.frame.width), height: 120)
         resultLabel.numberOfLines = 0
         resultLabel.textAlignment = .center
         resultLabel.font = UIFont.systemFont(ofSize: 20)
