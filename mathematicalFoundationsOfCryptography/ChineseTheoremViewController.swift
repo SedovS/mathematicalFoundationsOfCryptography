@@ -8,57 +8,61 @@
 
 import UIKit
 
-class ChineseTheoremViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class ChineseTheoremViewController: UIViewController {
     
+    var secondView = UIView()
+    let firstView = UIView()
     
-
-    let fieldView = UIView()
-    var searchButton = UIButton()
-    let resultLabel = UILabel()
-    let pickerView = UIPickerView()
-    let dataForPicker = [Int] (2...10)
-    let pickerTextField = UITextField()
+    let resultLabel = UILabel() //Показывает ответ
+    let picker = UIPickerView()
+    
+    let dataForPicker = [2,3,4,5,6,7,8] //возвоможное кол-во уравнений
+    var countEquations = 2 //значение уравнений по умолчанию
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        pickerView.delegate = self
-        pickerView.dataSource = self
+        picker.dataSource = self
+        picker.delegate = self
         droPickerView()
     }
     
     private func droPickerView() -> Void {
+        
         let textLabel = UILabel()
         textLabel.text = "Выберите количество уравнений"
-        textLabel.frame = CGRect(x: 50, y: 50, width: 250, height: 50)
-        view.addSubview(textLabel)
+        textLabel.numberOfLines = 0
+        textLabel.frame = CGRect(x: 50, y: 80, width: view.frame.width - 100, height: 50)
         textLabel.textAlignment = .center
         
-        pickerTextField.frame = CGRect(x: 50, y: 150, width: 50, height: 50)
-        pickerTextField.borderStyle = .roundedRect
-        view.addSubview(pickerTextField)
-        
-        pickerTextField.inputView = pickerView
-        
+        picker.center = view.center
+       
+        firstView.addSubview(textLabel)
+        view.addSubview(picker)
+        view.addSubview(firstView)
     }
     
-    private func drowField() -> Void {
-         pickerView.isHidden = true
-        fieldView.frame = CGRect(x: (view.frame.width - 320)/2, y: 70, width: 320, height: view.frame.height - 140)
+    private func drowField(countElement: Int) -> Void {
+        firstView.removeFromSuperview()
+        picker.removeFromSuperview()
+        
+        secondView.frame = CGRect(x: (view.frame.width - 320)/2, y: 70, width: 320, height: view.frame.height - 140)
+        var searchButton = UIButton()
+        var resetButton = UIButton()
+        var backButton = UIButton()
         
         var y = 10
-        let x1 = 65
-        let x2 = 180
+        let x1 = 70
+        let x2 = 185
         let height = 35
         let wightTextField = 70
         
-        for i in 1...3 {
+        for i in 1...countElement {
             let numberTextField = UITextField()
             let modulTextField = UITextField()
             let xLabel = UILabel()
             let modulLabel = UILabel()
             let bracketLabel = UILabel()
-            xLabel.frame = CGRect(x: 40, y: y, width: 25, height: height)
+            xLabel.frame = CGRect(x: x1 - 25, y: y, width: 25, height: height)
             xLabel.text = "Х="
             
             numberTextField.tag = i
@@ -77,40 +81,49 @@ class ChineseTheoremViewController: UIViewController, UIPickerViewDataSource, UI
             bracketLabel.frame = CGRect(x: x2 + wightTextField, y: y, width: 10, height: height)
             bracketLabel.text = ")"
             
-            fieldView.addSubview(xLabel)
-            fieldView.addSubview(numberTextField)
-            fieldView.addSubview(modulLabel)
-            fieldView.addSubview(modulTextField)
-            fieldView.addSubview(bracketLabel)
+            secondView.addSubview(xLabel)
+            secondView.addSubview(numberTextField)
+            secondView.addSubview(modulLabel)
+            secondView.addSubview(modulTextField)
+            secondView.addSubview(bracketLabel)
             
             y += height+10
         }
         searchButton = UIButton(type: .roundedRect)
-        searchButton.frame = CGRect(x: Int((fieldView.frame.width / 2) - 50), y: y, width: 100, height: height)
+        searchButton.frame = CGRect(x: Int((secondView.frame.width / 2) - 50), y: y, width: 100, height: height)
         searchButton.setTitle("Решить", for: .normal)
         searchButton.titleLabel?.font = UIFont.systemFont(ofSize: 20)
         searchButton.addTarget(self, action: #selector(search(sender:)), for: .touchUpInside)
+        resetButton = UIButton(type: .roundedRect)
+        resetButton.frame = CGRect(x: Int((secondView.frame.width / 2) - 50 + searchButton.frame.width), y: y, width: 100, height: height)
+        resetButton.setTitle("Сбросить", for: .normal)
+        resetButton.addTarget(self, action: #selector(reset(sender:)), for: .touchUpInside)
+        resetButton.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+        backButton = UIButton(type: .roundedRect)
+        backButton.frame = CGRect(x: Int((secondView.frame.width / 2) - 50 - searchButton.frame.width), y: y, width: 100, height: height)
+        backButton.setTitle("Кол-во", for: .normal)
+        backButton.addTarget(self, action: #selector(back(sender:)), for: .touchUpInside)
+        backButton.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+        
         y += height
-        resultLabel.frame = CGRect(x: 30, y: y, width: 260, height: 70)
+        resultLabel.frame = CGRect(x: 0, y: y, width: Int(secondView.frame.width), height: 90)
         resultLabel.numberOfLines = 0
         resultLabel.textAlignment = .center
         resultLabel.font = UIFont.systemFont(ofSize: 20)
         
-        fieldView.addSubview(resultLabel)
-        fieldView.addSubview(searchButton)
-        view.addSubview(fieldView)
-        
+        secondView.addSubview(resultLabel)
+        secondView.addSubview(searchButton)
+        secondView.addSubview(resetButton)
+        secondView.addSubview(backButton)
+        view.addSubview(secondView)
     }
-    
     
     @objc func search(sender: UIButton){
         
         var arrNumber = [Int]()
         var arrModul = [Int]()
-        resultLabel.text = ""
         
-        for i in 1...3{
-            
+        for i in 1...countEquations{
             let numberTextField = self.view.viewWithTag(i) as! UITextField
             let modulTextField = self.view.viewWithTag(100 + i) as! UITextField
             guard let number = Int(numberTextField.text!) else {return}
@@ -119,11 +132,34 @@ class ChineseTheoremViewController: UIViewController, UIPickerViewDataSource, UI
             arrModul.append(modul)
         }
         view.endEditing(true) //убираем клавиатуру
-        
-        resultLabel.text = "X=\(Algorithms.chineseRemeinderTheorem(arrayNumber: arrNumber, arrayModul: arrModul))"
-      
+        let result = Algorithms.chineseRemeinderTheorem(arrayNumber: arrNumber, arrayModul: arrModul)
+        if result == 0 {
+            resultLabel.text = "Модули уравнения должны быть взаимно простыми, т.е. их НОД=1. К сожалению, сейчас данное условаие не выполняется. Измените значения"
+        } else {
+             resultLabel.text = "X=\(result)"
+        }
     }
     
+    @objc func reset(sender: UIButton){
+        for i in 1...countEquations{
+            let numberTextField = self.view.viewWithTag(i) as! UITextField
+            let modulTextField = self.view.viewWithTag(100 + i) as! UITextField
+            numberTextField.text = ""
+            modulTextField.text = ""
+        }
+        resultLabel.text = ""
+    }
+    
+    @objc func back(sender: UIButton){
+        secondView.removeFromSuperview()
+        secondView = UIView()
+        countEquations = 2
+        droPickerView()
+    }
+    
+}
+
+extension ChineseTheoremViewController : UIPickerViewDataSource {
     
     //сколько компонентов выводить
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -133,14 +169,16 @@ class ChineseTheoremViewController: UIViewController, UIPickerViewDataSource, UI
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return dataForPicker.count
     }
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return String(dataForPicker[row])
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        pickerTextField.text = "\(dataForPicker[row])"
-        pickerView.isHidden = true
-        drowField()
-    }
-    
 }
+
+extension ChineseTheoremViewController : UIPickerViewDelegate {
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return "\(dataForPicker[row])"
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        countEquations = dataForPicker[row]
+        drowField(countElement: dataForPicker[row])
+    }
+}
+
