@@ -114,9 +114,9 @@ class Algorithms {
     public static func findInverseElement(_ a: Int, _ modul: Int ) -> Int? {
         let euclid = Euclid()
         guard euclid.greatestCommonDivisor(a, modul) == 1 else {return nil}
-        let inverseElement = Int(pow(Double(a), Double(functionEulers(modul)-1))) % modul //(a^(F(m)-1))(mod m)
+        let inverseElement = (pow(Double(a), Double(functionEulers(modul)-1))).truncatingRemainder(dividingBy: (Double(modul))) //(a^(F(m)-1))(mod m)
         
-        return inverseElement
+        return Int(inverseElement)
     }
     
     
