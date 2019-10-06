@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180BFC74234A113900843733 /* FindingDeductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180BFC73234A113900843733 /* FindingDeductionViewController.swift */; };
 		1875EB252327A50600B78775 /* MainPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875EB242327A50600B78775 /* MainPageTableViewController.swift */; };
 		1875EB272327A8C400B78775 /* MainPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875EB262327A8C400B78775 /* MainPageTableViewCell.swift */; };
 		1875EB292327AAF500B78775 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875EB282327AAF500B78775 /* Model.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		180BFC73234A113900843733 /* FindingDeductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindingDeductionViewController.swift; sourceTree = "<group>"; };
 		1875EB242327A50600B78775 /* MainPageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageTableViewController.swift; sourceTree = "<group>"; };
 		1875EB262327A8C400B78775 /* MainPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageTableViewCell.swift; sourceTree = "<group>"; };
 		1875EB282327AAF500B78775 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				18A24D80233CDE4600F1B7CE /* InverseElementViewController.swift */,
 				18A24D7E233CBBE600F1B7CE /* DecisionComparisonsViewController.swift */,
 				18832723233E574400F1AE99 /* ChineseTheoremViewController.swift */,
+				180BFC73234A113900843733 /* FindingDeductionViewController.swift */,
 				188DFA842327C0660071663B /* Main.storyboard */,
 				18B0076D2326CC4700F4D666 /* Assets.xcassets */,
 				18B0076F2326CC4700F4D666 /* LaunchScreen.storyboard */,
@@ -168,6 +171,7 @@
 				18B007792326CD2500F4D666 /* Euclid.swift in Sources */,
 				18B007692326CC4500F4D666 /* ViewController.swift in Sources */,
 				18951AF62329392F001039A9 /* EuclidPageViewController.swift in Sources */,
+				180BFC74234A113900843733 /* FindingDeductionViewController.swift in Sources */,
 				1875EB272327A8C400B78775 /* MainPageTableViewCell.swift in Sources */,
 				1875EB292327AAF500B78775 /* Model.swift in Sources */,
 				18A24D7F233CBBE600F1B7CE /* DecisionComparisonsViewController.swift in Sources */,
