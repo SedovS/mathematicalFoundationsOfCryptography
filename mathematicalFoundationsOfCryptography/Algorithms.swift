@@ -147,4 +147,29 @@ class Algorithms {
         return "X=\(resultX % multiplicationModul) + \(multiplicationModul)k, k∈Z"
     }
     
+    //Нахождение вычета a^k(mod m) для простого m
+    //
+    static public func findingDeductionSimple(a: Int, k: Int, modul: Int) -> Int {
+        
+        let newExp = a % (modul - 1) // a(mod m-1)
+        let aDec = Int64(a)
+        let result = Int(pow(Double(aDec), Double(newExp)).truncatingRemainder(dividingBy: Double(modul))) //aDec^newExp
+        return result
+    }
+    
+    //Нахождение вычета a^k(mod m) для составного m
+    // m=p1*p2*...*pn
+    static public func findingDeductionСomposite(a: Int, k: Int, modul: Int) -> String {
+        
+        let arrModuls = canonicalDecompositionNumber(modul)
+        var arrA = [Int]()
+        
+        for element in arrModuls {
+            let newA = Int(pow(Double(a), Double(k % (element - 1)))) % element
+            arrA.append(newA)
+        }
+        let result = chineseRemeinderTheorem(arrayNumber: arrA, arrayModul: arrModuls)
+        return result
+    }
+    
 }
