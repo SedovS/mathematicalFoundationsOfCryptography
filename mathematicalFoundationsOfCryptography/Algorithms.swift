@@ -151,7 +151,7 @@ class Algorithms {
     //
     static public func findingDeductionSimple(a: Int, k: Int, modul: Int) -> Int {
         
-        let newExp = a % (modul - 1) // a(mod m-1)
+        let newExp = k % (modul - 1) // k(mod m-1)
         let aDec = Int64(a)
         let result = Int(pow(Double(aDec), Double(newExp)).truncatingRemainder(dividingBy: Double(modul))) //aDec^newExp
         return result
