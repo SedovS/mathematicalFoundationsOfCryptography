@@ -188,7 +188,7 @@ class Algorithms {
             for el in arrC {
                 i += 1
                 if euclid.greatestCommonDivisor(a, modul) != 1 {break}
-                if (Int(pow(Double(a), Double(c/el))) % modul) == 1 {
+                if (Int(pow(Double(a), Double(c/el)).truncatingRemainder(dividingBy: Double(modul)))) == 1 {
                     break
                 }
                 if i == arrC.count {
