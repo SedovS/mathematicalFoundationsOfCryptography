@@ -127,7 +127,7 @@ class Algorithms {
     //yi = inverse(Mi)(mod mi)
     ////result = Summ((ai*Mi*yi(modM)))
     //return result
-    public static func chineseRemeinderTheorem(arrayNumber: [Int], arrayModul: [Int]) -> Int {
+    public static func chineseRemeinderTheorem(arrayNumber: [Int], arrayModul: [Int]) -> String {
         
         var multiplicationModul = 1
         var resultX = 0
@@ -140,10 +140,11 @@ class Algorithms {
         for i in 0..<arrayModul.count {
             let m = multiplicationModul / arrayModul[i]
             let y = findInverseElement((m%arrayModul[i]), arrayModul[i])
-            guard let yi = y else {return 0}
-            resultX += (arrayNumber[i]*m*yi) % multiplicationModul
+            guard let yi = y else {return ""}
+            resultX += (arrayNumber[i]*m*yi)
+            
         }
-        return resultX
+        return "X=\(resultX % multiplicationModul) + \(multiplicationModul)k, k∈Z"
     }
     
 }

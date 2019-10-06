@@ -133,10 +133,10 @@ class ChineseTheoremViewController: UIViewController {
         }
         view.endEditing(true) //убираем клавиатуру
         let result = Algorithms.chineseRemeinderTheorem(arrayNumber: arrNumber, arrayModul: arrModul)
-        if result == 0 {
+        if result == "" {
             resultLabel.text = "Модули уравнения должны быть взаимно простыми, т.е. их НОД=1. К сожалению, сейчас данное условаие не выполняется. Измените значения"
         } else {
-             resultLabel.text = "X=\(result)"
+             resultLabel.text = result
         }
     }
     
