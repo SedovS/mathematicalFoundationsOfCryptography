@@ -32,11 +32,13 @@ class Model {
         let item3 = Model(name: "Нахождение обатного элемента", about: "by sergey_sedov 3-я лекция", seguaIdentifier: "mainPageToInverseElement")
         let item4 = Model(name: "Решение сравненией (для простого и составного m)", about: "by sergey_sedov 3-я лекция", seguaIdentifier: "mainPageToDicisionComparisons")
         let item5 = Model(name: "Китайская теорема", about:"by sergey_sedov 4-я лекция" , seguaIdentifier: "mainPageToChineseTheorem")
+        let item6 = Model(name: "Нахождение вычета", about: "by sergey_sedov 5-я лекция", seguaIdentifier: "mainPageToFindingDeduction")
         allAlgorithm.append(item)
         allAlgorithm.append(item2)
         allAlgorithm.append(item3)
         allAlgorithm.append(item4)
         allAlgorithm.append(item5)
+        allAlgorithm.append(item6)
         return allAlgorithm
     }
     
