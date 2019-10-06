@@ -172,4 +172,31 @@ class Algorithms {
         return result
     }
     
+    
+    //Нахождение первообразного корня (образуещего элемента)
+    //
+    //
+    static public func antiderivativeRoot(modul: Int) -> [Int] {
+        
+        let c = functionEulers(modul)
+        let arrC = canonicalDecompositionNumber(c) //c=p1*p2*...*pn
+        var result = [Int]()
+        
+        for a in 1..<modul {
+            var i: Int = 0
+            let euclid = Euclid()
+            for el in arrC {
+                i += 1
+                if euclid.greatestCommonDivisor(a, modul) != 1 {break}
+                if (Int(pow(Double(a), Double(c/el))) % modul) == 1 {
+                    break
+                }
+                if i == arrC.count {
+                    result.append(a)
+                }
+            }
+        }
+        return result
+    }
+    
 }
