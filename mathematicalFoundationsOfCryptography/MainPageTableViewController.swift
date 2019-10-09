@@ -14,7 +14,7 @@ class MainPageTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        allAlgorithm = Model.returnArr()
+        allAlgorithm = Model.getModel()
     }
 
     // MARK: - Table view data source

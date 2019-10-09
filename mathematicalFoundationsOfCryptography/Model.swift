@@ -13,19 +13,13 @@ class Model {
     public var about: String
     public var seguaIdentifier: String
     
-    init () {
-        name = ""
-        about = "by sergey_sedov"
-        seguaIdentifier = ""
-    }
-    
     init(name: String, about: String, seguaIdentifier: String) {
         self.name = name
         self.about = about
         self.seguaIdentifier = seguaIdentifier
     }
 
-    static func getModel() -> [Model] {
+    static public func getModel() -> [Model] {
         return [Model(name: "Алгоритм Евклида", about: "by sergey_sedov 1-я лекция", seguaIdentifier: "mainPageToEuclid"),
         Model(name: "Каноническое разложение числа \n Функция Эйлера", about: "by sergey_sedov 2-я лекция", seguaIdentifier: "mainPageToEulerAbdCDN"),
         Model(name: "Нахождение обатного элемента", about: "by sergey_sedov 3-я лекция", seguaIdentifier: "mainPageToInverseElement"),
@@ -36,9 +30,5 @@ class Model {
         ]
     }
 
-    
-
-    
-    
 }
 
