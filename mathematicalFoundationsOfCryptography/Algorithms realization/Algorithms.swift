@@ -169,6 +169,7 @@ class Algorithms {
             arrA.append(newA)
         }
         let result = chineseRemeinderTheorem(arrayNumber: arrA, arrayModul: arrModuls)
+        if result == "" {return "Не удается посчитать по китайской теоремме, так НОД модулей \(arrModuls) не равен 1"}
         return result
     }
     

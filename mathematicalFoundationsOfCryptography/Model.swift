@@ -24,25 +24,20 @@ class Model {
         self.about = about
         self.seguaIdentifier = seguaIdentifier
     }
-    
-    public static func returnArr() -> [Model] {
-        var allAlgorithm = [Model]()
-        let item = Model(name: "Алгоритм Евклида", about: "by sergey_sedov 1-я лекция", seguaIdentifier: "mainPageToEuclid")
-        let item2 = Model(name: "Каноническое разложение числа \n Функция Эйлера", about: "by sergey_sedov 2-я лекция", seguaIdentifier: "mainPageToEulerAbdCDN")
-        let item3 = Model(name: "Нахождение обатного элемента", about: "by sergey_sedov 3-я лекция", seguaIdentifier: "mainPageToInverseElement")
-        let item4 = Model(name: "Решение сравненией (для простого и составного m)", about: "by sergey_sedov 3-я лекция", seguaIdentifier: "mainPageToDicisionComparisons")
-        let item5 = Model(name: "Китайская теорема", about:"by sergey_sedov 4-я лекция" , seguaIdentifier: "mainPageToChineseTheorem")
-        let item6 = Model(name: "Нахождение вычета", about: "by sergey_sedov 5-я лекция", seguaIdentifier: "mainPageToFindingDeduction")
-        let item7 = Model(name: "Нахождение первообразного корня", about: "by sergey_sedov 5-я лекция", seguaIdentifier: "mainPageToAntiderivativeRoot")
-        allAlgorithm.append(item)
-        allAlgorithm.append(item2)
-        allAlgorithm.append(item3)
-        allAlgorithm.append(item4)
-        allAlgorithm.append(item5)
-        allAlgorithm.append(item6)
-        allAlgorithm.append(item7)
-        return allAlgorithm
+
+    static func getModel() -> [Model] {
+        return [Model(name: "Алгоритм Евклида", about: "by sergey_sedov 1-я лекция", seguaIdentifier: "mainPageToEuclid"),
+        Model(name: "Каноническое разложение числа \n Функция Эйлера", about: "by sergey_sedov 2-я лекция", seguaIdentifier: "mainPageToEulerAbdCDN"),
+        Model(name: "Нахождение обатного элемента", about: "by sergey_sedov 3-я лекция", seguaIdentifier: "mainPageToInverseElement"),
+        Model(name: "Решение сравненией (для простого и составного m)", about: "by sergey_sedov 3-я лекция", seguaIdentifier: "mainPageToDicisionComparisons"),
+        Model(name: "Китайская теорема", about:"by sergey_sedov 4-я лекция" , seguaIdentifier: "mainPageToChineseTheorem"),
+        Model(name: "Нахождение вычета", about: "by sergey_sedov 5-я лекция", seguaIdentifier: "mainPageToFindingDeduction"),
+        Model(name: "Нахождение первообразного корня", about: "by sergey_sedov 5-я лекция", seguaIdentifier: "mainPageToAntiderivativeRoot")
+        ]
     }
+
+    
+
     
     
 }
