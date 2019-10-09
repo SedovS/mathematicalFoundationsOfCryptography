@@ -82,6 +82,20 @@
 				18B007682326CC4500F4D666 /* ViewController.swift */,
 				1875EB262327A8C400B78775 /* MainPageTableViewCell.swift */,
 				1875EB242327A50600B78775 /* MainPageTableViewController.swift */,
+				18B20CC8234E23F200CCE020 /* Algorithms VC */,
+				18B20CC9234E243400CCE020 /* Algorithms realization */,
+				1875EB282327AAF500B78775 /* Model.swift */,
+				188DFA842327C0660071663B /* Main.storyboard */,
+				18B0076D2326CC4700F4D666 /* Assets.xcassets */,
+				18B0076F2326CC4700F4D666 /* LaunchScreen.storyboard */,
+				18B007722326CC4700F4D666 /* Info.plist */,
+			);
+			path = mathematicalFoundationsOfCryptography;
+			sourceTree = "<group>";
+		};
+		18B20CC8234E23F200CCE020 /* Algorithms VC */ = {
+			isa = PBXGroup;
+			children = (
 				18951AF52329392F001039A9 /* EuclidPageViewController.swift */,
 				18ED69BF233381D8008C3A23 /* EulerAndCDNPageViewController.swift */,
 				18A24D80233CDE4600F1B7CE /* InverseElementViewController.swift */,
@@ -89,15 +103,17 @@
 				18832723233E574400F1AE99 /* ChineseTheoremViewController.swift */,
 				180BFC73234A113900843733 /* FindingDeductionViewController.swift */,
 				180BFC75234A2F2500843733 /* AntiderivativeRootViewController.swift */,
-				188DFA842327C0660071663B /* Main.storyboard */,
-				18B0076D2326CC4700F4D666 /* Assets.xcassets */,
-				18B0076F2326CC4700F4D666 /* LaunchScreen.storyboard */,
-				1875EB282327AAF500B78775 /* Model.swift */,
+			);
+			path = "Algorithms VC";
+			sourceTree = "<group>";
+		};
+		18B20CC9234E243400CCE020 /* Algorithms realization */ = {
+			isa = PBXGroup;
+			children = (
 				18B007782326CD2500F4D666 /* Euclid.swift */,
 				18ED69BD23337FD3008C3A23 /* Algorithms.swift */,
-				18B007722326CC4700F4D666 /* Info.plist */,
 			);
-			path = mathematicalFoundationsOfCryptography;
+			path = "Algorithms realization";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
