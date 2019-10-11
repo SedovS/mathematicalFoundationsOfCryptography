@@ -53,7 +53,7 @@ class Algorithms {
         var b = 1
         
         if array.count == 1 {
-           stringResult = "\(array[0])"// array[0] - число простое
+            stringResult = "\(array[0])"// array[0] - число простое
             return stringResult
         }
         
@@ -119,7 +119,34 @@ class Algorithms {
         return Int(inverseElement)
     }
     
+    //Решение сравений для простого M
+    static public func comparisonsSimpleM(inverseElement : Int, b : Int, modul : Int) -> String {
+        let text = "X= \(b*inverseElement%modul) + \(modul)k, k∈Z"
+        return text
+    }
     
+    //Решение сравений для составного M
+    static public func comparisonsCompoundM(a : Int, b : Int, modul : Int) -> String {
+        let a = a % modul
+        let b = b % modul
+        let euclid = Euclid()
+        let d = euclid.greatestCommonDivisor(a, modul)
+        if b%d != 0 {
+            return "d|b условие теоремы не выполняется, \n т.к. \(d) не делит нацело \(b) \n \(b)%\(d)=\(b%d) "
+            
+        }
+        guard let inverseElement = Algorithms.findInverseElement(a/d, modul/d) else {
+            return "Нельзя найти обратный элемент, (a=\(a),modul\(modul))!=1"
+            
+        }
+        var text = ""
+        for i in 0..<d {
+            text += "X\(i + 1)= \((b/d)*inverseElement + ((i)*(modul/d))) + \(modul)k, k∈Z\n"
+        }
+        
+        return text
+        
+    }
     
     //Китайская теорема об остатках
     //M = Multiplication (mi)
