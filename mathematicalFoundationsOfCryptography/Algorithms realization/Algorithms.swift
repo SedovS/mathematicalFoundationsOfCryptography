@@ -227,4 +227,94 @@ class Algorithms {
         return result
     }
     
+    //решение степенного (показательного) уравнения
+    //a*x^exp = b (mod modul)
+    //return "x = ..."
+    static public func exponentialComparison(a: Int, exponent: Int, b: Int, modul: Int) -> String {
+       
+        var b = b
+        var exp = exponent
+        
+        if a != 0 {
+            guard let u = findInverseElement(a, modul) else {return "(\(a),\(modul))!=1, числа не взаимно простые"}
+            b = (b * u % modul)
+        }
+        let betta = functionEulers(modul)
+        
+        let arr = antiderivativeRoot(modul: modul)
+        if arr.count == 0 {
+            return "\(modul) не имеет первообразных корней \(arr)"
+        }
+        let baseInd = arr[0]
+       
+        guard var gamma = ind(base: baseInd, number: b, modul: modul) else {return "(\(b),\(modul))!=1, нельзя проиндексировать число \(b)"}
+        let euclid = Euclid()
+        let d = euclid.greatestCommonDivisor(exp, betta)
+        if (gamma % d) != 0 {
+            return "Ур-е не имеет решений, т.к d=\(d), \(gamma)|\(d) - не выполняется"
+        }
+        
+        exp = exp / d
+        gamma = gamma / d
+        let newModul = modul / d
+        
+        if exp != 1 {
+            guard let u = findInverseElement(exp, newModul) else {return "(\(exp),\(newModul))!=1, числа не взаимно простые"}
+            gamma = (gamma * u) % newModul
+        }
+        
+        return "x= \(baseInd)^(\(gamma)+\(newModul)k), k∈Z"
+    }
+    
+    //решение степенного (показательного) уравнения, когда х стоит в степени
+    //a^x = b (mod modul)
+    //return "x = ..."
+    static public func exponentialXComparison(a: Int, b: Int, modul: Int) -> String {
+        
+        let betta = functionEulers(modul)
+        let arr = antiderivativeRoot(modul: modul)
+        if arr.count == 0 {
+            return "\(modul) не имеет первообразных корней \(arr)"
+        }
+        let baseInd = arr[0]
+        
+        guard var gammaA = ind(base: baseInd, number: a, modul: modul) else {return "(\(a),\(modul))!=1, нельзя проиндексировать число \(b)"}
+        guard var gammaB = ind(base: baseInd, number: b, modul: modul) else {return "(\(b),\(modul))!=1, нельзя проиндексировать число \(b)"}
+        let euclid = Euclid()
+        let d = euclid.greatestCommonDivisor(gammaA, betta)
+        if (gammaB % d) != 0 {
+            return "Ур-е не имеет решений, т.к d=\(d), \(gammaB)|\(d) - не выполняется"
+        }
+        gammaA = gammaA / d
+        gammaB = gammaB / d
+        let newModul = betta / d
+        
+        if gammaA != 1 {
+            guard let u = findInverseElement(gammaA, newModul) else {return "(\(gammaA),\(newModul))!=1, числа не взаимно простые"}
+            gammaB = (gammaB * u) % newModul
+        }
+        
+        return "x=\(gammaB) + \(newModul)k, k∈Z"
+        
+    }
+    
+    //Индекс числа
+    //gamma = ind base number
+    //base^gamma = number
+    //return gamma or nil
+    static private func ind(base: Int, number: Int, modul: Int) -> Int? {
+        
+        let euclid = Euclid()
+        if euclid.greatestCommonDivisor(number,modul) != 1 {return nil}
+        
+        let beta = functionEulers(modul) - 1
+        
+        for gamma in 0...beta {
+            if (Int(pow(Double(base),Double(gamma))) % modul) == number {
+                return gamma
+            }
+        }
+        return nil
+    }
+    
 }
