@@ -10,21 +10,38 @@ import UIKit
 
 class SymbolLegendreAndJacobiViewController: UIViewController {
 
+    @IBOutlet weak var descroptionLabel: UILabel!
+    @IBOutlet weak var aTextField: UITextField!
+    @IBOutlet weak var pTextField: UITextField!
+    @IBAction func LegandreButton(_ sender: UIButton) {
+        Legandre()
+    }
+    @IBAction func JacobiButton(_ sender: UIButton) {
+        Jacobi()
+    }
+    @IBOutlet weak var resultLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        descroptionLabel.text = "Нахождение символа Лежандра и символа Якоби.\nПозволяет узнать есть ли такие х что бы сравнение x^2=a(mod p) выполнялось"
+        resultLabel.text = ""
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func Legandre() -> Void {
+        resultLabel.text = ""
+        guard let a = Int(aTextField.text!) else {return}
+        guard let p = Int(pTextField.text!) else {return}
+        if a == 0 || p == 0 {return}
+        view.endEditing(true)
+        resultLabel.text = Algorithms.symbolLegendre(a: a, p: p)
     }
-    */
+    
+    private func Jacobi() -> Void {
+        resultLabel.text = ""
+        guard let a = Int(aTextField.text!) else {return}
+        guard let p = Int(pTextField.text!) else {return}
+        if a == 0 || p == 0 {return}
+        view.endEditing(true)
+        resultLabel.text = Algorithms.symbolJacobi(a: a, m: p)
+    }
 
 }

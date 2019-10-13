@@ -10,21 +10,78 @@ import UIKit
 
 class ExponentialComparisonViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBOutlet weak var segmentControl: UISegmentedControl!
+    
+    @IBOutlet weak var equationLabel: UILabel!
+    
+    @IBOutlet weak var firstLabel: UILabel!
+    @IBOutlet weak var firstTextField: UITextField!
+    
+    @IBOutlet weak var secondLabel: UILabel!
+    @IBOutlet weak var secondTextField: UITextField!
+    
+    @IBOutlet weak var thirdLabel: UILabel!
+    @IBOutlet weak var thirdTextField: UITextField!
+    
+    @IBOutlet weak var fourLabel: UILabel!
+    @IBOutlet weak var fourTextLabel: UITextField!
+    
+    @IBOutlet weak var resultLabel: UILabel!
 
-        // Do any additional setup after loading the view.
+    
+    @IBAction func searchButton(_ sender: UIButton) {
+        search()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        resultLabel.text = ""
+        fourLabel.isHidden = true
+        fourTextLabel.isHidden = true
+        equationLabel.text = "a^x = b (mod m)"
+        self.segmentControl.addTarget(self, action: #selector(selectedValue), for: .valueChanged)
     }
-    */
-
+    
+    private func search() -> Void {
+        guard let a = Int(firstTextField.text!) else {return}
+        guard let b = Int(secondTextField.text!) else {return}
+        guard let mod = Int(thirdTextField.text!) else {return}
+        if a == 0 || b == 0 || mod == 0 {return}
+        if segmentControl.selectedSegmentIndex == 1 {
+            guard let exp = Int(fourTextLabel.text!) else {return}
+            if exp == 0 {return}
+            view.endEditing(true)
+            resultLabel.text = Algorithms.exponentialComparison(a: a, exponent: exp, b: b, modul: mod)
+        } else {
+            view.endEditing(true)
+            resultLabel.text = Algorithms.exponentialXComparison(a: a, b: b, modul: mod)
+        }
+    }
+    
+    @objc func selectedValue(target: UISegmentedControl){
+        if segmentControl.selectedSegmentIndex == 0 {
+            resultLabel.text = ""
+            cleanTextField()
+            equationLabel.text = "a^x = b (mod m)"
+            fourLabel.isHidden = true
+            fourTextLabel.text = ""
+            fourTextLabel.isHidden = true
+            
+        }
+        if segmentControl.selectedSegmentIndex == 1 {
+            resultLabel.text = ""
+            cleanTextField()
+            equationLabel.text = "a*x^n = b (mod m)"
+            fourLabel.isHidden = false
+            fourTextLabel.isHidden = false
+        }
+    }
+    
+    private func cleanTextField() -> Void {
+        firstTextField.text = ""
+        secondTextField.text = ""
+        thirdTextField.text = ""
+        fourTextLabel.text = ""
+    }
+    
 }
