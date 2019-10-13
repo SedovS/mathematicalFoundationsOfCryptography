@@ -72,6 +72,49 @@ class Algorithms {
         return stringResult
     }
     
+    //Каноническое разложение числа на простые множители
+    //a - каноническое разложение числа на простые множители
+    // a = p1^k1 * p2^k2 * ... * ps^ks
+    //return Dictionary<String, Int>  = [p1: k1,p2: k2]
+    static public func canonicalDecompositionNumberToDictionary(_ number: Int) -> Dictionary<Int, Int> {
+        
+        var number = number
+        var a = 3 //для проверки кратности 2-м есть отдельный цикл
+        var dictionary : Dictionary<Int, Int> = [:]
+        
+        if number == 0 {
+            return [:]
+        }
+        
+        func addValue(_ key: Int){
+            if dictionary[key] == nil {
+                dictionary[key] = 1
+            } else {
+                dictionary[key]! += 1
+            }
+        }
+        
+        //проверка кратности 2-м
+        while (number % 2 == 0) {
+            number = number / 2
+            addValue(2)
+        }
+        
+        while (a < number) {
+            
+            if (number % a == 0) {
+                addValue(a)
+                number = number / a
+            } else {
+                a += 2
+            }
+        }
+        if number > 1 {
+            addValue(number)
+        }
+        return dictionary
+    }
+    
     //Функия Эйлера
     //Function Euler`s
     //функция Эйлера F(m) - кол-во чисел ряда 0,1..,m-1 взаимно простых с m
@@ -120,12 +163,14 @@ class Algorithms {
     }
     
     //Решение сравений для простого M
+    //return "x=..."
     static public func comparisonsSimpleM(inverseElement : Int, b : Int, modul : Int) -> String {
         let text = "X= \(b*inverseElement%modul) + \(modul)k, k∈Z"
         return text
     }
     
     //Решение сравений для составного M
+    ////return "x1=... , x2 = ... , xd = .... "
     static public func comparisonsCompoundM(a : Int, b : Int, modul : Int) -> String {
         let a = a % modul
         let b = b % modul
@@ -175,7 +220,7 @@ class Algorithms {
     }
     
     //Нахождение вычета a^k(mod m) для простого m
-    //
+    //return a^k(mod m)
     static public func findingDeductionSimple(a: Int, k: Int, modul: Int) -> Int {
         
         let newExp = k % (modul - 1) // k(mod m-1)
@@ -186,6 +231,7 @@ class Algorithms {
     
     //Нахождение вычета a^k(mod m) для составного m
     // m=p1*p2*...*pn
+    //return a^k(mod m)
     static public func findingDeductionСomposite(a: Int, k: Int, modul: Int) -> String {
         
         let arrModuls = canonicalDecompositionNumber(modul)
@@ -316,5 +362,79 @@ class Algorithms {
         }
         return nil
     }
+    
+    
+    //Нахождение символа Лежандра
+    //
+    //
+    static public func symbolLegendre(a: Int, p: Int) -> Int {
+        var a = a % p
+        let p = p
+        var result: Int = 1
+        let euclid = Euclid()
+        if euclid.greatestCommonDivisor(a, p) != 1 {return 0}
+        
+        if a < 0 {
+            result *= criterionEuler(a: -1, p: p)
+            a = abs(a)
+        }
+        
+        let dictionary = canonicalDecompositionNumberToDictionary(a)
+        for (key, value) in dictionary {
+            if value % 2 == 0 {continue}
+            else {
+                if key == 2 {
+                    result *= criterionEuler(a: 2, p: p)
+                } else {
+                    result *= qadraticLaw(q: key, p: p)
+                    result *= helpLegrange(a: key, p: p)
+                }
+            }
+        }
+        
+        return result
+    }
+    
+    //Критерий Эйлера
+    static private func criterionEuler(a: Int, p: Int) -> Int {
+        let remainder = Int(pow(Double(a), Double((p-1)/2)).truncatingRemainder(dividingBy: Double(p)))
+        
+        if remainder == 1 {return 1}
+        else {return -1}
+    }
+    
+    //
+    static private func helpLegrange(a: Int, p: Int) -> Int {
+        let aa = a
+        let pp = p
+        let p = aa
+        let a = pp % aa
+        var result = 1
+        
+        let dictionary = canonicalDecompositionNumberToDictionary(a)
+        
+        for (key, value) in dictionary {
+            if value % 2 == 0 {continue}
+            else {
+                if key == 2 {
+                    result *= criterionEuler(a: 2, p: p)
+                } else {
+                    result *= qadraticLaw(q: key, p: p)
+                    result *= helpLegrange(a: key, p: p)
+                    //result *= criterionEuler(a: p%key, p: key)
+                }
+            }
+        }
+        
+        return result
+    }
+    
+    //Квадратичный закон взаимности
+    static private func qadraticLaw(q: Int, p: Int) -> Int {
+        return Int(pow(Double(-1), Double( ((p-1)/2) * ((q-1)/2) )))
+    }
+    
+    
+    
     
 }
