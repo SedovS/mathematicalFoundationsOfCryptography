@@ -280,7 +280,7 @@ class Algorithms {
        
         var b = b
         var exp = exponent
-        
+        var result = "\(a)*x^\(exp) = \(b) (mod \(modul))\n"
         if a != 0 {
             guard let u = findInverseElement(a, modul) else {return "(\(a),\(modul))!=1, числа не взаимно простые"}
             b = (b * u % modul)
@@ -289,7 +289,7 @@ class Algorithms {
         
         let arr = antiderivativeRoot(modul: modul)
         if arr.count == 0 {
-            return "\(modul) не имеет первообразных корней \(arr)"
+            return "\(modul) не имеет первообразных корней"
         }
         let baseInd = arr[0]
        
@@ -305,11 +305,12 @@ class Algorithms {
         let newModul = modul / d
         
         if exp != 1 {
-            guard let u = findInverseElement(exp, newModul) else {return "(\(exp),\(newModul))!=1, числа не взаимно простые"}
+            guard let u = findInverseElement(exp, newModul) else {return "(\(exp),\(newModul))!=1, числа не взаимнопростые"}
             gamma = (gamma * u) % newModul
         }
         
-        return "x= \(baseInd)^(\(gamma)+\(newModul)k), k∈Z"
+        result += "x= \(baseInd)^(\(gamma)+\(newModul)k), k∈Z"
+        return result
     }
     
     //решение степенного (показательного) уравнения, когда х стоит в степени
@@ -320,9 +321,10 @@ class Algorithms {
         let betta = functionEulers(modul)
         let arr = antiderivativeRoot(modul: modul)
         if arr.count == 0 {
-            return "\(modul) не имеет первообразных корней \(arr)"
+            return "\(modul) не имеет первообразных корней"
         }
         let baseInd = arr[0]
+        var result = "\(a)^x = \(b) (mod \(modul))\n"
         
         guard var gammaA = ind(base: baseInd, number: a, modul: modul) else {return "(\(a),\(modul))!=1, нельзя проиндексировать число \(b)"}
         guard var gammaB = ind(base: baseInd, number: b, modul: modul) else {return "(\(b),\(modul))!=1, нельзя проиндексировать число \(b)"}
@@ -339,8 +341,8 @@ class Algorithms {
             guard let u = findInverseElement(gammaA, newModul) else {return "(\(gammaA),\(newModul))!=1, числа не взаимно простые"}
             gammaB = (gammaB * u) % newModul
         }
-        
-        return "x=\(gammaB) + \(newModul)k, k∈Z"
+        result += "x=\(gammaB) + \(newModul)k, k∈Z"
+        return result
         
     }
     
@@ -364,15 +366,41 @@ class Algorithms {
     }
     
     
+    
     //Нахождение символа Лежандра
     //
+    //return String с ответом или ошибками
+    static public func symbolLegendre(a: Int, p: Int) -> String {
+        
+        if p == 1 {return "Число \(a) является квадратичным вычетом по модулю \(p) \nСравнение x^2 = \(a)(mod\(p)) \n Имеет решение"}
+        
+        guard functionEulers(p) == (p-1) else{
+            return "Модуль \(p) не простой"
+        }
+        
+        let euclid = Euclid()
+        guard euclid.greatestCommonDivisor(a, p) == 1 else{
+            return "НОД (\(a),\(p)) != 1"
+        }
+        
+        let result: Int = symbolLegendre(a: a, p: p)
+        
+        if result == 1 {
+            return "Число \(a) является квадратичным вычетом по модулю \(p) \nСравнение x^2 = \(a)(mod\(p)) \n Имеет решение"
+        } else if result == -1 {
+            return "Число \(a) является квадратичным НЕвычетом по модулю \(p) \nСравнение x^2 = \(a)(mod\(p)) \n не имеет решений"
+        }
+        return "Что то работает не так(( "
+    }
+    
+    //Нахождение символа Лежандра
     //
-    static public func symbolLegendre(a: Int, p: Int) -> Int {
+    //return 1 or -1
+    static private func symbolLegendre(a: Int, p: Int) -> Int {
+        
         var a = a % p
         let p = p
         var result: Int = 1
-        let euclid = Euclid()
-        if euclid.greatestCommonDivisor(a, p) != 1 {return 0}
         
         if a < 0 {
             result *= criterionEuler(a: -1, p: p)
@@ -398,7 +426,6 @@ class Algorithms {
     //Критерий Эйлера
     static private func criterionEuler(a: Int, p: Int) -> Int {
         let remainder = Int(pow(Double(a), Double((p-1)/2)).truncatingRemainder(dividingBy: Double(p)))
-        
         if remainder == 1 {return 1}
         else {return -1}
     }
@@ -434,7 +461,53 @@ class Algorithms {
         return Int(pow(Double(-1), Double( ((p-1)/2) * ((q-1)/2) )))
     }
     
+    //Нахождение символа Якоби
+    //
+    //return String с ответом или ошибками
+    static public func symbolJacobi(a: Int, m: Int) -> String {
+        let euclid = Euclid()
+        guard euclid.greatestCommonDivisor(a, m) == 1 else{
+            return "НОД (\(a),\(m)) != 1"
+        }
+        
+        if m % 2 == 0 {return "\(m) не может быть четным"}
+        if a % 2 == 0 {return "\(a) не может быть четным"}
+        
+        var result: Int = 1
+        
+        if functionEulers(m) == (m-1) {
+            result = symbolLegendre(a: a, p: m)
+        }
+        
+        result = symbolLegendre(a: a, p: m)
+        if result == 1 {
+            return "Число \(a) является квадратичным вычетом по модулю \(m) \nСравнение x^2 = \(a)(mod\(m)) \n Возможно имеет решение"
+        }else if result == -1 {
+            return "Число \(a) является квадратичным НЕвычетом по модулю \(m) \nСравнение x^2 = \(a)(mod\(m)) \n не имеет решений"
+        }
+        
+        return "Что то работает не так(( "
+    }
     
     
+    //Нахожденеи символа Якоби
+    //
+    //return 1 or -1
+    static private func symbolJacobi(a: Int, m: Int) -> Int {
+    
+        var result: Int = 1
+        
+        if functionEulers(m) == (m-1) {
+            result = symbolLegendre(a: a, p: m)
+            return result
+        }
+        
+        let dictionary = canonicalDecompositionNumberToDictionary(m)
+        
+        for (key, _) in dictionary {
+            result *= symbolLegendre(a: a, p: key)
+        }
+        return result
+    }
     
 }
