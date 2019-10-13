@@ -26,7 +26,9 @@ class Model {
         Model(name: "Решение сравненией (для простого и составного m)", about: "by sergey_sedov 3-я лекция", seguaIdentifier: "mainPageToDicisionComparisons"),
         Model(name: "Китайская теорема", about:"by sergey_sedov 4-я лекция" , seguaIdentifier: "mainPageToChineseTheorem"),
         Model(name: "Нахождение вычета", about: "by sergey_sedov 5-я лекция", seguaIdentifier: "mainPageToFindingDeduction"),
-        Model(name: "Нахождение первообразного корня", about: "by sergey_sedov 5-я лекция", seguaIdentifier: "mainPageToAntiderivativeRoot")
+        Model(name: "Нахождение первообразного корня", about: "by sergey_sedov 5-я лекция", seguaIdentifier: "mainPageToAntiderivativeRoot"),
+        Model(name: "Решенеи степенного (показательного) уравнения", about: "by sergey_sedov 6-я лекция", seguaIdentifier: "mainPageToExponentialComparison"),
+        Model(name: "Нахождение символа Лежандра и символа Якоби", about: "by sergey_sedov 6-я лекция", seguaIdentifier: "mainPageToSymbolLandJ")
         ]
     }
 
