@@ -24,6 +24,8 @@
 		18B007792326CD2500F4D666 /* Euclid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B007782326CD2500F4D666 /* Euclid.swift */; };
 		18ED69BE23337FD3008C3A23 /* Algorithms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED69BD23337FD3008C3A23 /* Algorithms.swift */; };
 		18ED69C0233381D8008C3A23 /* EulerAndCDNPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED69BF233381D8008C3A23 /* EulerAndCDNPageViewController.swift */; };
+		18FCD97023535ADD00EEE8D0 /* SymbolLegendreAndJacobiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FCD96F23535ADD00EEE8D0 /* SymbolLegendreAndJacobiViewController.swift */; };
+		18FCD972235360C700EEE8D0 /* ExponentialComparisonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FCD971235360C700EEE8D0 /* ExponentialComparisonViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		18B007782326CD2500F4D666 /* Euclid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Euclid.swift; sourceTree = "<group>"; };
 		18ED69BD23337FD3008C3A23 /* Algorithms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Algorithms.swift; sourceTree = "<group>"; };
 		18ED69BF233381D8008C3A23 /* EulerAndCDNPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EulerAndCDNPageViewController.swift; sourceTree = "<group>"; };
+		18FCD96F23535ADD00EEE8D0 /* SymbolLegendreAndJacobiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolLegendreAndJacobiViewController.swift; sourceTree = "<group>"; };
+		18FCD971235360C700EEE8D0 /* ExponentialComparisonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExponentialComparisonViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				18832723233E574400F1AE99 /* ChineseTheoremViewController.swift */,
 				180BFC73234A113900843733 /* FindingDeductionViewController.swift */,
 				180BFC75234A2F2500843733 /* AntiderivativeRootViewController.swift */,
+				18FCD971235360C700EEE8D0 /* ExponentialComparisonViewController.swift */,
+				18FCD96F23535ADD00EEE8D0 /* SymbolLegendreAndJacobiViewController.swift */,
 			);
 			path = "Algorithms VC";
 			sourceTree = "<group>";
@@ -192,8 +198,10 @@
 				18B007692326CC4500F4D666 /* ViewController.swift in Sources */,
 				18951AF62329392F001039A9 /* EuclidPageViewController.swift in Sources */,
 				180BFC74234A113900843733 /* FindingDeductionViewController.swift in Sources */,
+				18FCD972235360C700EEE8D0 /* ExponentialComparisonViewController.swift in Sources */,
 				1875EB272327A8C400B78775 /* MainPageTableViewCell.swift in Sources */,
 				1875EB292327AAF500B78775 /* Model.swift in Sources */,
+				18FCD97023535ADD00EEE8D0 /* SymbolLegendreAndJacobiViewController.swift in Sources */,
 				18A24D7F233CBBE600F1B7CE /* DecisionComparisonsViewController.swift in Sources */,
 				18ED69BE23337FD3008C3A23 /* Algorithms.swift in Sources */,
 				18ED69C0233381D8008C3A23 /* EulerAndCDNPageViewController.swift in Sources */,
