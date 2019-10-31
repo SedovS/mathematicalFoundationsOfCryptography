@@ -27,10 +27,10 @@ class FindingDeductionViewController: UIViewController {
     private func search() -> Void {
         
         resultLabel.text = ""
-        guard let number = Int(numberTextField.text!) else {return}
-        guard let modul = Int(modulTextField.text!) else {return}
-        guard let exponent = Int(exponentTextField.text!) else {return}
-        if number == 0 || modul == 0 || exponent == 0 {return}
+        guard let number = Int(numberTextField.text!), number != 0 else {return}
+        guard let modul = Int(modulTextField.text!), modul != 0 else {return}
+        guard let exponent = Int(exponentTextField.text!), exponent != 0 else {return}
+
         view.endEditing(true) //убираем клавиатуру
         
         if Algorithms.functionEulers(modul) == modul-1 {
