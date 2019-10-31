@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		180BFC74234A113900843733 /* FindingDeductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180BFC73234A113900843733 /* FindingDeductionViewController.swift */; };
 		180BFC76234A2F2500843733 /* AntiderivativeRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180BFC75234A2F2500843733 /* AntiderivativeRootViewController.swift */; };
+		18537E54236AD8FA00764ED5 /* Swift-Big-Number-Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18537E53236AD8FA00764ED5 /* Swift-Big-Number-Core.swift */; };
 		1875EB252327A50600B78775 /* MainPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875EB242327A50600B78775 /* MainPageTableViewController.swift */; };
 		1875EB272327A8C400B78775 /* MainPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875EB262327A8C400B78775 /* MainPageTableViewCell.swift */; };
 		1875EB292327AAF500B78775 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875EB282327AAF500B78775 /* Model.swift */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		180BFC73234A113900843733 /* FindingDeductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindingDeductionViewController.swift; sourceTree = "<group>"; };
 		180BFC75234A2F2500843733 /* AntiderivativeRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntiderivativeRootViewController.swift; sourceTree = "<group>"; };
+		18537E53236AD8FA00764ED5 /* Swift-Big-Number-Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Swift-Big-Number-Core.swift"; sourceTree = "<group>"; };
 		1875EB242327A50600B78775 /* MainPageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageTableViewController.swift; sourceTree = "<group>"; };
 		1875EB262327A8C400B78775 /* MainPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageTableViewCell.swift; sourceTree = "<group>"; };
 		1875EB282327AAF500B78775 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
@@ -63,6 +65,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18537E55236AD93800764ED5 /* Swift-Big-Number-Core */ = {
+			isa = PBXGroup;
+			children = (
+				18537E53236AD8FA00764ED5 /* Swift-Big-Number-Core.swift */,
+			);
+			path = "Swift-Big-Number-Core";
+			sourceTree = "<group>";
+		};
 		18B0075A2326CC4500F4D666 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +99,7 @@
 				18B20CC8234E23F200CCE020 /* Algorithms VC */,
 				18B20CC9234E243400CCE020 /* Algorithms realization */,
 				1875EB282327AAF500B78775 /* Model.swift */,
+				18537E55236AD93800764ED5 /* Swift-Big-Number-Core */,
 				188DFA842327C0660071663B /* Main.storyboard */,
 				18B0076D2326CC4700F4D666 /* Assets.xcassets */,
 				18B0076F2326CC4700F4D666 /* LaunchScreen.storyboard */,
@@ -200,6 +211,7 @@
 				180BFC74234A113900843733 /* FindingDeductionViewController.swift in Sources */,
 				18FCD972235360C700EEE8D0 /* ExponentialComparisonViewController.swift in Sources */,
 				1875EB272327A8C400B78775 /* MainPageTableViewCell.swift in Sources */,
+				18537E54236AD8FA00764ED5 /* Swift-Big-Number-Core.swift in Sources */,
 				1875EB292327AAF500B78775 /* Model.swift in Sources */,
 				18FCD97023535ADD00EEE8D0 /* SymbolLegendreAndJacobiViewController.swift in Sources */,
 				18A24D7F233CBBE600F1B7CE /* DecisionComparisonsViewController.swift in Sources */,

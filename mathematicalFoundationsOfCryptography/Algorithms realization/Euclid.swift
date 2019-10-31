@@ -57,8 +57,12 @@ class Euclid{
         while b != 0 {
             (a, b, x0, x1) = (b, a%b, x1, x0 - (a/b)*x1)
         }
-        let U = x0
-        let V = (greatestCommonDivisor(firstNumber, secondNumder) - firstNumber*x0)/secondNumder
+        
+        var U = x0
+        if U < 0 {
+           U = (U + secondNumber) % secondNumber
+        }
+        let V = (greatestCommonDivisor(firstNumber, secondNumder) - firstNumber*U)/secondNumder
         return(U,V)
     }
     

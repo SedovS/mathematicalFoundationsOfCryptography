@@ -157,7 +157,11 @@ class Algorithms {
     public static func findInverseElement(_ a: Int, _ modul: Int ) -> Int? {
         let euclid = Euclid()
         guard euclid.greatestCommonDivisor(a, modul) == 1 else {return nil}
-        let inverseElement = (pow(Double(a), Double(functionEulers(modul)-1))).truncatingRemainder(dividingBy: (Double(modul))) //(a^(F(m)-1))(mod m)
+        //let inverseElement = (pow(Double(a), Double(functionEulers(modul)-1))).truncatingRemainder(dividingBy: (Double(modul))) //(a^(F(m)-1))(mod m)
+       
+        let bigA = BInt(a)  //from class Swift-Big-Number-Core
+        let bigModul = BInt(modul)
+        let inverseElement = (bigA ** (functionEulers(modul)-1)) % bigModul //(a^(F(m)-1))(mod m)
         
         return Int(inverseElement)
     }
@@ -234,13 +238,22 @@ class Algorithms {
     //return a^k(mod m)
     static public func findingDeductionСomposite(a: Int, k: Int, modul: Int) -> String {
         
-        let arrModuls = canonicalDecompositionNumber(modul)
+        //let arrModuls = canonicalDecompositionNumber(modul)
+        var arrModuls = [Int]()
         var arrA = [Int]()
-        
+        let dictModuls = canonicalDecompositionNumberToDictionary(modul)
+        for element in dictModuls {
+            let mod = (Int(pow(Double(element.key), Double(element.value))))
+            let newEl = Int(pow(Double(a),Double(k % (mod - 1)))) % mod
+            arrA.append(newEl)
+            arrModuls.append(mod)
+        }
+        /*
         for element in arrModuls {
             let newA = Int(pow(Double(a), Double(k % (element - 1)))) % element
             arrA.append(newA)
-        }
+        }*/
+        
         let result = chineseRemeinderTheorem(arrayNumber: arrA, arrayModul: arrModuls)
         if result == "" {return "Не удается посчитать по китайской теоремме, так НОД модулей \(arrModuls) не равен 1"}
         return result
@@ -375,7 +388,7 @@ class Algorithms {
         if p == 1 {return "Число \(a) является квадратичным вычетом по модулю \(p) \nСравнение x^2 = \(a)(mod\(p)) \n Имеет решение"}
         
         guard functionEulers(p) == (p-1) else{
-            return "Модуль \(p) не простой"
+            return "Модуль \(p) не простой. Воспользуйтксь символом Якоби"
         }
         
         let euclid = Euclid()
@@ -469,9 +482,6 @@ class Algorithms {
         guard euclid.greatestCommonDivisor(a, m) == 1 else{
             return "НОД (\(a),\(m)) != 1"
         }
-        
-        if m % 2 == 0 {return "\(m) не может быть четным"}
-        if a % 2 == 0 {return "\(a) не может быть четным"}
         
         var result: Int = 1
         
