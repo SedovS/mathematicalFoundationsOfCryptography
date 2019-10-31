@@ -31,12 +31,9 @@ class DecisionComparisonsViewController: UIViewController {
         scrollView.removeFromSuperview()
         resultLabel.text = ""
         
-        guard var a = Int(firstTextField.text!) else {return}
-        guard var b = Int(secondTextField.text!) else {return}
-        guard let modul = Int(thirdTextField.text!) else {return}
-        guard a != 0 else {return}
-        guard b != 0 else {return}
-        guard modul != 0 else {return}
+        guard var a = Int(firstTextField.text!), a != 0 else {return}
+        guard var b = Int(secondTextField.text!), b != 0 else {return}
+        guard let modul = Int(thirdTextField.text!), modul != 0 else {return}
         view.endEditing(true) //убираем клавиатуру
         
         a = a % modul
