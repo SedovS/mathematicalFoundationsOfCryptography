@@ -287,7 +287,7 @@ class Algorithms {
         return result
     }
     
-    //решение степенного (показательного) уравнения
+    //решение степенного (показательного) уравнения, х в основании
     //a*x^exp = b (mod modul)
     //return "x = ..."
     static public func exponentialComparison(a: Int, exponent: Int, b: Int, modul: Int) -> String {
@@ -307,7 +307,7 @@ class Algorithms {
         }
         let baseInd = arr[0]
        
-        guard var gamma = ind(base: baseInd, number: b, modul: modul) else {return "(\(b),\(modul))!=1, нельзя проиндексировать число \(b)"}
+        guard var gamma = ind(base: baseInd, number: b, modul: modul) else {return "(\(b),\(modul))!=1, ИЛИ нельзя проиндексировать число \(b)"}
         let euclid = Euclid()
         let d = euclid.greatestCommonDivisor(exp, betta)
         if (gamma % d) != 0 {
@@ -340,8 +340,8 @@ class Algorithms {
         let baseInd = arr[0]
         var result = "\(a)^x = \(b) (mod \(modul))\n"
         
-        guard var gammaA = ind(base: baseInd, number: a, modul: modul) else {return "(\(a),\(modul))!=1, нельзя проиндексировать число \(b)"}
-        guard var gammaB = ind(base: baseInd, number: b, modul: modul) else {return "(\(b),\(modul))!=1, нельзя проиндексировать число \(b)"}
+        guard var gammaA = ind(base: baseInd, number: a, modul: modul) else {return "(\(a),\(modul))!=1, ИЛИ нельзя проиндексировать число \(b)"}
+        guard var gammaB = ind(base: baseInd, number: b, modul: modul) else {return "(\(b),\(modul))!=1, ИЛИ нельзя проиндексировать число \(b)"}
         let euclid = Euclid()
         let d = euclid.greatestCommonDivisor(gammaA, betta)
         if (gammaB % d) != 0 {
