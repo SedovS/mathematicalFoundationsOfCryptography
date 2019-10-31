@@ -43,10 +43,10 @@ class ExponentialComparisonViewController: UIViewController {
     }
     
     private func search() -> Void {
-        guard let a = Int(firstTextField.text!) else {return}
-        guard let b = Int(secondTextField.text!) else {return}
-        guard let mod = Int(thirdTextField.text!) else {return}
-        if a == 0 || b == 0 || mod == 0 {return}
+        guard let a = Int(firstTextField.text!), a != 0 else {return}
+        guard let b = Int(secondTextField.text!), b != 0 else {return}
+        guard let mod = Int(thirdTextField.text!), mod != 0 else {return}
+
         if segmentControl.selectedSegmentIndex == 1 {
             guard let exp = Int(fourTextLabel.text!) else {return}
             if exp == 0 {return}

@@ -24,8 +24,7 @@ class AntiderivativeRootViewController: UIViewController {
 
     private func search() -> Void {
         resultLabel.text = ""
-        guard let number = Int(numberTextField.text!) else {return}
-        if number == 0 {return}
+        guard let number = Int(numberTextField.text!), number != 0 else {return}
         
         view.endEditing(true)
         let arrResult = Algorithms.antiderivativeRoot(modul: number)
