@@ -35,10 +35,8 @@ class EuclidPageViewController: UIViewController {
     
     func search() -> Void {
         resultLabel.text = ""
-        guard let firstNumber = Int(firstTextField.text!) else {return}
-        guard firstNumber != 0 else {return}
-        guard let secondNumber = Int(secondTextField.text!) else {return}
-        guard secondNumber != 0 else {return}
+        guard let firstNumber = Int(firstTextField.text!), firstNumber != 0 else {return}
+        guard let secondNumber = Int(secondTextField.text!), secondNumber != 0 else {return}
         
         showSolutionOutletButton.isEnabled = true
         scrollView.removeFromSuperview()
@@ -55,10 +53,8 @@ class EuclidPageViewController: UIViewController {
     }
     
     private func showSolution() -> Void {
-        guard let firstNumber = Int(firstTextField.text!) else {return}
-        guard firstNumber != 0 else {return}
-        guard let secondNumber = Int(secondTextField.text!) else {return}
-        guard secondNumber != 0 else {return}
+        guard let firstNumber = Int(firstTextField.text!), firstNumber != 0 else {return}
+        guard let secondNumber = Int(secondTextField.text!), secondNumber != 0 else {return}
         
         let euclid = Euclid()
         showSolutionOutletButton.isEnabled = false
