@@ -28,18 +28,16 @@ class SymbolLegendreAndJacobiViewController: UIViewController {
     
     private func Legandre() -> Void {
         resultLabel.text = ""
-        guard let a = Int(aTextField.text!) else {return}
-        guard let p = Int(pTextField.text!) else {return}
-        if a == 0 || p == 0 {return}
+        guard let a = Int(aTextField.text!), a != 0 else {return}
+        guard let p = Int(pTextField.text!), p != 0 else {return}
         view.endEditing(true)
         resultLabel.text = Algorithms.symbolLegendre(a: a, p: p)
     }
     
     private func Jacobi() -> Void {
         resultLabel.text = ""
-        guard let a = Int(aTextField.text!) else {return}
-        guard let p = Int(pTextField.text!) else {return}
-        if a == 0 || p == 0 {return}
+        guard let a = Int(aTextField.text!), a != 0 else {return}
+        guard let p = Int(pTextField.text!), p != 0 else {return}
         view.endEditing(true)
         resultLabel.text = Algorithms.symbolJacobi(a: a, m: p)
     }
