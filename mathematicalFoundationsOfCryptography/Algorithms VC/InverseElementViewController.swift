@@ -27,10 +27,8 @@ class InverseElementViewController: UIViewController {
     
     private func search() -> Void {
         resultLabel.text = ""
-        guard let number = Int(numberTextField.text!) else {return}
-        guard let modul = Int(modulTextField.text!) else {return}
-        guard number != 0 else {return}
-        guard modul != 0 else {return}
+        guard let number = Int(numberTextField.text!), number != 0 else {return}
+        guard let modul = Int(modulTextField.text!), modul != 0 else {return}
         view.endEditing(true) //убираем клавиатуру
         
         guard let result = Algorithms.findInverseElement(number, modul) else {resultLabel.text = "НОД(\(number),\(modul)) != 1 \n Нельзя найти обратный элемент "
