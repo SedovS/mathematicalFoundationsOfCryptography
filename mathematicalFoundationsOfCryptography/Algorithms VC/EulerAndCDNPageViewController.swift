@@ -25,8 +25,7 @@ class EulerAndCDNPageViewController: UIViewController {
     
     private func search() -> Void {
         resultLabel.text = ""
-        guard let number = Int(numberTextField.text!) else {return}
-        guard number != 0 else {return}
+        guard let number = Int(numberTextField.text!), number != 0 else {return}
         view.endEditing(true) //убираем клавиатуру
        
         if segmentControl.selectedSegmentIndex == 0 {
