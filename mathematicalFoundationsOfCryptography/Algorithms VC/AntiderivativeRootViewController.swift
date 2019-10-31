@@ -39,7 +39,8 @@ class AntiderivativeRootViewController: UIViewController {
         
         resultLabel.text! += "{"
         for i in 0..<Algorithms.functionEulers(number) {
-            resultLabel.text! += "\(Int(pow(Double(arrResult[0]), Double(i)).truncatingRemainder(dividingBy: Double(number)))), "
+            resultLabel.text! += "\((BInt(arrResult[0]) ** i) % number)  "
+            //resultLabel.text! += "\(Int(pow(Double(arrResult[0]), Double(i)).truncatingRemainder(dividingBy: Double(number)))), "
         }
         resultLabel.text?.removeLast()
         resultLabel.text?.removeLast()

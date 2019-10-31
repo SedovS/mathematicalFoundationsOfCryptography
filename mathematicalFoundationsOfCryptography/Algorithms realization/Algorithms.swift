@@ -275,7 +275,8 @@ class Algorithms {
             for el in arrC {
                 i += 1
                 if euclid.greatestCommonDivisor(a, modul) != 1 {break}
-                if (Int(pow(Double(a), Double(c/el)).truncatingRemainder(dividingBy: Double(modul)))) == 1 {
+                let x = Int((BInt(a) ** (c/el)) % modul) //(Int(pow(Double(a), Double(c/el)).truncatingRemainder(dividingBy: Double(modul))))
+                if x == 1 {
                     break
                 }
                 if i == arrC.count {
@@ -371,7 +372,8 @@ class Algorithms {
         let beta = functionEulers(modul) - 1
         
         for gamma in 0...beta {
-            if (Int(pow(Double(base),Double(gamma))) % modul) == number {
+            let x = Int((BInt(base) ** gamma) % modul) //(Int(pow(Double(base),Double(gamma))) % modul)
+            if x == number {
                 return gamma
             }
         }
@@ -438,7 +440,8 @@ class Algorithms {
     
     //Критерий Эйлера
     static private func criterionEuler(a: Int, p: Int) -> Int {
-        let remainder = Int(pow(Double(a), Double((p-1)/2)).truncatingRemainder(dividingBy: Double(p)))
+        // let remainder = Int(pow(Double(a), Double((p-1)/2)).truncatingRemainder(dividingBy: Double(p)))
+        let remainder = Int((BInt(a) ** ((p-1)/2)) % p)
         if remainder == 1 {return 1}
         else {return -1}
     }
