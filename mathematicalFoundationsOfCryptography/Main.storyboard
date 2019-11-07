@@ -75,6 +75,7 @@
                         <segue destination="C0D-fP-qTy" kind="show" identifier="mainPageToAntiderivativeRoot" id="864-UA-NBU"/>
                         <segue destination="nAl-CV-iYh" kind="show" identifier="mainPageToSymbolLandJ" id="lBM-eB-6Vm"/>
                         <segue destination="V8b-UE-8Kz" kind="show" identifier="mainPageToExponentialComparison" id="944-ac-TEj"/>
+                        <segue destination="JNb-2F-oAG" kind="show" identifier="mainPageToOrderGroup" id="caR-Vp-xIA"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cMG-co-Q3R" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -641,7 +642,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Ve-zS-i4E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-433.33333333333337" y="2428.5326086956525"/>
+            <point key="canvasLocation" x="257" y="2473"/>
         </scene>
         <!--Symbol Legendre And Jacobi View Controller-->
         <scene sceneID="baD-kv-cQV">
@@ -760,7 +761,88 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iss-HR-Mz7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="231.8840579710145" y="2452.989130434783"/>
+            <point key="canvasLocation" x="1083" y="2473"/>
+        </scene>
+        <!--Order Group View Controller-->
+        <scene sceneID="A3W-Fe-j4i">
+            <objects>
+                <viewController id="JNb-2F-oAG" customClass="OrderGroupViewController" customModule="mathematicalFoundationsOfCryptography" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yxf-hZ-2cU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нахождение порядка всех элементов в группе по сложению (Zm+) и в группе по умножению (Zm*)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgV-Gz-6mw">
+                                <rect key="frame" x="20" y="64" width="374" height="71.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iu5-8j-vfk">
+                                <rect key="frame" x="122" y="185.66666666666666" width="170" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="7h6-2x-WCJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWT-ya-ere">
+                                <rect key="frame" x="20" y="325.66666666666669" width="374" height="350.00000000000006"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="350" id="2Fn-mR-oTi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zm8-qw-KP7">
+                                <rect key="frame" x="212" y="269.66666666666669" width="130" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="oz0-yd-adP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Поиск Zm*"/>
+                                <connections>
+                                    <action selector="searchMultButton:" destination="JNb-2F-oAG" eventType="touchUpInside" id="0EC-Hj-GfQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3fz-UN-Vnl">
+                                <rect key="frame" x="72" y="269.66666666666669" width="130" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="uk4-Qe-oVS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title=" Поиск Zm+"/>
+                                <connections>
+                                    <action selector="searchAddButton:" destination="JNb-2F-oAG" eventType="touchUpInside" id="yfr-lo-52v"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="iu5-8j-vfk" firstAttribute="top" secondItem="tgV-Gz-6mw" secondAttribute="bottom" constant="50" id="36O-Ss-GxG"/>
+                            <constraint firstItem="tgV-Gz-6mw" firstAttribute="leading" secondItem="uTJ-Uv-qtb" secondAttribute="leading" constant="20" id="6ij-oX-NXr"/>
+                            <constraint firstItem="KWT-ya-ere" firstAttribute="leading" secondItem="uTJ-Uv-qtb" secondAttribute="leading" constant="20" id="9b4-c4-fSB"/>
+                            <constraint firstItem="zm8-qw-KP7" firstAttribute="top" secondItem="iu5-8j-vfk" secondAttribute="bottom" constant="50" id="IHf-FV-log"/>
+                            <constraint firstItem="tgV-Gz-6mw" firstAttribute="top" secondItem="uTJ-Uv-qtb" secondAttribute="top" constant="20" id="JlX-tW-pHV"/>
+                            <constraint firstItem="zm8-qw-KP7" firstAttribute="centerX" secondItem="Yxf-hZ-2cU" secondAttribute="centerX" constant="70" id="LgW-ZO-EAj"/>
+                            <constraint firstItem="3fz-UN-Vnl" firstAttribute="centerX" secondItem="Yxf-hZ-2cU" secondAttribute="centerX" constant="-70" id="PmS-cV-gbo"/>
+                            <constraint firstItem="iu5-8j-vfk" firstAttribute="centerX" secondItem="Yxf-hZ-2cU" secondAttribute="centerX" id="RJU-0I-0e8"/>
+                            <constraint firstItem="3fz-UN-Vnl" firstAttribute="top" secondItem="iu5-8j-vfk" secondAttribute="bottom" constant="50" id="f5W-Iv-jqu"/>
+                            <constraint firstItem="uTJ-Uv-qtb" firstAttribute="trailing" secondItem="KWT-ya-ere" secondAttribute="trailing" constant="20" id="mHl-qp-wzB"/>
+                            <constraint firstItem="KWT-ya-ere" firstAttribute="top" secondItem="3fz-UN-Vnl" secondAttribute="bottom" constant="20" id="yKu-w8-6KV"/>
+                            <constraint firstItem="uTJ-Uv-qtb" firstAttribute="trailing" secondItem="tgV-Gz-6mw" secondAttribute="trailing" constant="20" id="yQH-7B-dLa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uTJ-Uv-qtb"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="BBV-ga-EJs"/>
+                    <connections>
+                        <outlet property="numberTextField" destination="iu5-8j-vfk" id="KLl-qi-pXB"/>
+                        <outlet property="resultLabel" destination="KWT-ya-ere" id="NKJ-Cw-8mp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vdu-7W-L75" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1088.4057971014493" y="2472.554347826087"/>
         </scene>
         <!--Antiderivative Root View Controller-->
         <scene sceneID="eck-9j-N4v">

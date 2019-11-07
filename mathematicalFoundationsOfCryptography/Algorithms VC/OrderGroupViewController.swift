@@ -9,22 +9,40 @@
 import UIKit
 
 class OrderGroupViewController: UIViewController {
-
+    @IBOutlet weak var numberTextField: UITextField!
+    
+    @IBOutlet weak var resultLabel: UILabel!
+    
+    
+    @IBAction func searchAddButton(_ sender: UIButton) {
+        search(operation: "addition")
+    }
+    @IBAction func searchMultButton(_ sender: UIButton) {
+        search(operation: "multiplication")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        resultLabel.text = ""
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func search(operation: String){
+      
+        resultLabel.text = ""
+        guard let number = Int(numberTextField.text!), number != 0 else {return}
+        view.endEditing(true)
+        
+        switch operation {
+        case "addition":
+            resultLabel.text = Group.findOrderAdditionGroup(p: number)
+            break
+        case "multiplication":
+            resultLabel.text = Group.findOrderMultiplicationGroup(p: number)
+            break
+        default:
+            return
+        }
+        
     }
-    */
 
 }
