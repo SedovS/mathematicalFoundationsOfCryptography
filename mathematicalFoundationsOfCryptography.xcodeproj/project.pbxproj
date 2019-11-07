@@ -25,6 +25,7 @@
 		18B0076E2326CC4700F4D666 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18B0076D2326CC4700F4D666 /* Assets.xcassets */; };
 		18B007712326CC4700F4D666 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B0076F2326CC4700F4D666 /* LaunchScreen.storyboard */; };
 		18B007792326CD2500F4D666 /* Euclid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B007782326CD2500F4D666 /* Euclid.swift */; };
+		18E1ACE12374A8BF00D70713 /* GroupOnSubgroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1ACE02374A8BE00D70713 /* GroupOnSubgroupsViewController.swift */; };
 		18ED69BE23337FD3008C3A23 /* Algorithms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED69BD23337FD3008C3A23 /* Algorithms.swift */; };
 		18ED69C0233381D8008C3A23 /* EulerAndCDNPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED69BF233381D8008C3A23 /* EulerAndCDNPageViewController.swift */; };
 		18FCD97023535ADD00EEE8D0 /* SymbolLegendreAndJacobiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FCD96F23535ADD00EEE8D0 /* SymbolLegendreAndJacobiViewController.swift */; };
@@ -52,6 +53,7 @@
 		18B007702326CC4700F4D666 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18B007722326CC4700F4D666 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18B007782326CD2500F4D666 /* Euclid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Euclid.swift; sourceTree = "<group>"; };
+		18E1ACE02374A8BE00D70713 /* GroupOnSubgroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupOnSubgroupsViewController.swift; sourceTree = "<group>"; };
 		18ED69BD23337FD3008C3A23 /* Algorithms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Algorithms.swift; sourceTree = "<group>"; };
 		18ED69BF233381D8008C3A23 /* EulerAndCDNPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EulerAndCDNPageViewController.swift; sourceTree = "<group>"; };
 		18FCD96F23535ADD00EEE8D0 /* SymbolLegendreAndJacobiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolLegendreAndJacobiViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				18FCD971235360C700EEE8D0 /* ExponentialComparisonViewController.swift */,
 				18FCD96F23535ADD00EEE8D0 /* SymbolLegendreAndJacobiViewController.swift */,
 				1849F6662372D9CD0086CC1C /* OrderGroupViewController.swift */,
+				18E1ACE02374A8BE00D70713 /* GroupOnSubgroupsViewController.swift */,
 			);
 			path = "Algorithms VC";
 			sourceTree = "<group>";
@@ -133,8 +136,8 @@
 			isa = PBXGroup;
 			children = (
 				18B007782326CD2500F4D666 /* Euclid.swift */,
-				18179C94236C7FEA0049DF23 /* Group.swift */,
 				18ED69BD23337FD3008C3A23 /* Algorithms.swift */,
+				18179C94236C7FEA0049DF23 /* Group.swift */,
 			);
 			path = "Algorithms realization";
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 			files = (
 				18179C95236C7FEA0049DF23 /* Group.swift in Sources */,
 				18B007792326CD2500F4D666 /* Euclid.swift in Sources */,
+				18E1ACE12374A8BF00D70713 /* GroupOnSubgroupsViewController.swift in Sources */,
 				180BFC76234A2F2500843733 /* AntiderivativeRootViewController.swift in Sources */,
 				18B007692326CC4500F4D666 /* ViewController.swift in Sources */,
 				18951AF62329392F001039A9 /* EuclidPageViewController.swift in Sources */,
