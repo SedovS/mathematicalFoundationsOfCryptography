@@ -34,15 +34,32 @@ class OrderGroupViewController: UIViewController {
         
         switch operation {
         case "addition":
-            resultLabel.text = Group.findOrderAdditionGroup(p: number)
+            if number-1 == Algorithms.functionEulers(number) {
+                resultLabel.text = "Порядок всех элементов равен \(number), т.к. \(number) простое число"
+            }else {
+                textResult(dictionary: Group.findOrderAdditionGroup(p: number))
+            }
+           // resultLabel.text = Group.findOrderAdditionGroup(p: number)
             break
         case "multiplication":
-            resultLabel.text = Group.findOrderMultiplicationGroup(p: number)
+            textResult(dictionary: Group.findOrderMultiplicationGroup(p: number))
             break
         default:
             return
         }
         
+    }
+    
+    private func textResult(dictionary: Dictionary<Int, Int>) -> Void {
+        
+        var text : String = ""
+        for element in dictionary {
+            text += "ord \(element.key) = \(element.value), "
+        }
+        text.removeLast(2)
+        text += "."
+        
+        resultLabel.text = text
     }
 
 }
