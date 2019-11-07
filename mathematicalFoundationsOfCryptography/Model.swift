@@ -28,7 +28,9 @@ class Model {
         Model(name: "Нахождение вычета", about: "by sergey_sedov 5-я лекция", seguaIdentifier: "mainPageToFindingDeduction"),
         Model(name: "Нахождение первообразного корня", about: "by sergey_sedov 5-я лекция", seguaIdentifier: "mainPageToAntiderivativeRoot"),
         Model(name: "Решенеи степенного (показательного) уравнения", about: "by sergey_sedov 6-я лекция", seguaIdentifier: "mainPageToExponentialComparison"),
-        Model(name: "Нахождение символа Лежандра и символа Якоби", about: "by sergey_sedov 6-я лекция", seguaIdentifier: "mainPageToSymbolLandJ")
+        Model(name: "Нахождение символа Лежандра и символа Якоби", about: "by sergey_sedov 6-я лекция", seguaIdentifier: "mainPageToSymbolLandJ"),
+        Model(name: "Нахождение порядка всех элементов в группе Zm+ и Zm*", about: "by sergey_sedov 8-я лекция", seguaIdentifier: "mainPageToOrderGroup")
+            
         ]
     }
 
