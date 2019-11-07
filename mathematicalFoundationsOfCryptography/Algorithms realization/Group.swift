@@ -13,13 +13,13 @@ class Group {
     // Нахождение порядка всех элементов в группе по умножению
     //
     //
-    static func findOrderMultiplicationGroup(p: Int) -> String {
+    static func findOrderMultiplicationGroup(p: Int) -> Dictionary<Int,Int> {
         let modul = p
         let euler = Algorithms.functionEulers(modul)
         let dictP = Algorithms.canonicalDecompositionNumberToDictionary(euler)
         
-        var ord = 1 // ord a =
-        var result: String = ""
+        var ord = 1 // ord a = 
+        var dict = Dictionary<Int, Int>()
         
         for a in 1...euler {
             for p in dictP {
@@ -37,24 +37,20 @@ class Group {
                     }
                 }
             }
-            result += "ord\(a) = \(ord), "
+            dict[a] = ord
             ord = 1
         }
-        result.removeLast(2)
-        result += "."
-        return result
+        
+        return dict
     }
     
     // Нахождение порядка всех элементов в группе по сложению
-    static func findOrderAdditionGroup(p: Int) -> String {
+    static func findOrderAdditionGroup(p: Int) -> Dictionary<Int, Int> {
         
-        if p-1 == Algorithms.functionEulers(p) {
-            return "Порядок всех элементов равен \(p), т.к \(p) простое число"
-        }
         let modul = p
         //let dictP = Algorithms.canonicalDecompositionNumberToDictionary(modul)
-        var result: String = ""
         var ord = 0 // ord a =
+        var dict = Dictionary<Int, Int>()
         
         for a in 1...modul {
         
@@ -89,11 +85,9 @@ class Group {
                     }
                 }
             } */
-            result += "ord\(a) = \(ord), "
+            dict[a] = ord
             ord = 0
         }
-        result.removeLast(2)
-        result += "."
-        return result
+        return dict
     }
 }
