@@ -134,7 +134,7 @@ class Group {
     
     //Помогает сформировать подргуппу порядка n для элемента a ПО СУММЕ
     //i in 1...n
-    //a^i
+    //a*i
     private static func helpSubgroupsOnAddition(a: Int, n: Int, modul: Int) -> [Int] {
         var array = [Int]()
         
@@ -163,4 +163,44 @@ class Group {
         return result
     }
 
+    //Разложение группы на подгруппы по произведению
+    //
+    static func decompositionGroupOnSubgroupsOnMultiplication(element: Int) -> Dictionary<Int, [[Int]]> {
+        
+        var subgroups = Dictionary<Int, [[Int]]>()
+        
+        var orders = [Int]()
+        let euler = Algorithms.functionEulers(element)
+        
+        for a in 1..<element {
+            for n in 1...euler {
+                
+                if (Int(BInt(a) ** n % BInt(element))) == 1 {
+                    
+                    if orders.contains(n) {
+                        break
+                    }
+                    orders.append(n)
+                    subgroups[a] = [helpSubgroupsOnAMultiplication(a: a, n: n, modul: element)]
+                    break
+                }
+            }
+        }
+        
+        return subgroups
+    }
+    
+    //Помогает сформировать подргуппу порядка n для элемента a ПО ПРОИЗВЕДЕНИЮ
+    //i in 1...n
+    //a^i
+    private static func helpSubgroupsOnAMultiplication(a: Int, n: Int, modul: Int) -> [Int] {
+        var array = [Int]()
+        
+        for i in 1...n {
+            array.append(Int(BInt(a) ** i % BInt(modul)))
+        }
+        
+        return array
+    }
+    
 }
