@@ -20,10 +20,13 @@ class Group {
         
         var ord = 1 // ord a = 
         var dict = Dictionary<Int, Int>()
+        let euckid = Euclid()
         
-        for a in 1...euler {
+        for a in 1..<p {
+            if euckid.greatestCommonDivisor(a, p) != 1 {
+                continue
+            }
             for p in dictP {
-                //for w in p.value...0 {
 
                 for w in stride(from: p.value, through: 0, by: -1) {
                     let exp = euler/(Int(pow(Double(p.key), Double(w)))) // (p-1)/p1^w
@@ -31,7 +34,6 @@ class Group {
                     if Int((BInt(a) ** exp) % BInt(modul)) == 1{
                         let r = p.value - w
                         ord *= Int(pow(Double(p.key), Double(r)))
-                        // ????? mb  ?????
                        
                         break
                     }
