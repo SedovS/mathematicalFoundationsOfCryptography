@@ -39,7 +39,6 @@ class OrderGroupViewController: UIViewController {
             }else {
                 textResult(dictionary: Group.findOrderAdditionGroup(p: number))
             }
-           // resultLabel.text = Group.findOrderAdditionGroup(p: number)
             break
         case "multiplication":
             textResult(dictionary: Group.findOrderMultiplicationGroup(p: number))
@@ -53,7 +52,8 @@ class OrderGroupViewController: UIViewController {
     private func textResult(dictionary: Dictionary<Int, Int>) -> Void {
         
         var text : String = ""
-        for element in dictionary {
+        let sortDict = dictionary.sorted(by: { $0.key < $1.key} )
+        for element in sortDict {
             text += "ord \(element.key) = \(element.value), "
         }
         text.removeLast(2)
