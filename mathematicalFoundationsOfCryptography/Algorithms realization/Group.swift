@@ -29,7 +29,7 @@ class Group {
             for p in dictP {
 
                 for w in stride(from: p.value, through: 0, by: -1) {
-                    let exp = euler/(Int(pow(Double(p.key), Double(w)))) // (p-1)/p1^w
+                    let exp = euler/(Int(pow(Double(p.key), Double(w)))) // (functionEuler(p))/p1^w
                     
                     if Int((BInt(a) ** exp) % BInt(modul)) == 1{
                         let r = p.value - w
