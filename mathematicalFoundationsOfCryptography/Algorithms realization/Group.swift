@@ -90,4 +90,75 @@ class Group {
         }
         return dict
     }
+    
+    
+    //Разложение группы на подгруппы по сумме
+    //
+    static func decompositionGroupOnSubgroupsOnAddition(element: Int) -> Dictionary<Int, [[Int]]> {
+        
+        var subgroups = Dictionary<Int, [[Int]]>()
+        
+        //Если число простое, то всего две подгруппы
+        if element - 1 == Algorithms.functionEulers(element) {
+            var array = [Int]()
+            for a in 0..<element{
+                array.append(a)
+            }
+            subgroups[1] = [array]
+            subgroups[2] = [[0]]
+            return subgroups
+        }
+        
+        var orders = [Int]()
+        
+        for a in 1...element {
+            for n in 1...element {
+            
+                if (a * n % element) == 0 {
+                    
+                    if orders.contains(n) {
+                        break
+                    }
+                    orders.append(n)
+                    subgroups[a] = [helpSubgroupsOnAddition(a: a, n: n, modul: element)]
+                    subgroups[a]! += formationRelatedClassesAddition(subgroup: helpSubgroupsOnAddition(a: a, n: n, modul: element), element: element)
+                    break
+                }
+            }
+        }
+        
+        return subgroups
+    }
+    
+    //Помогает сформировать подргуппу порядка n для элемента a ПО СУММЕ
+    //i in 1...n
+    //a^i
+    private static func helpSubgroupsOnAddition(a: Int, n: Int, modul: Int) -> [Int] {
+        var array = [Int]()
+        
+        for i in 1...n {
+            array.append(a * i % modul)
+        }
+        
+        return array
+    }
+    
+    
+    //Формирование смежных классов для каждой подгруппы по сложению
+    private static func formationRelatedClassesAddition(subgroup: [Int], element: Int) -> [[Int]] {
+        
+        var result = [[Int]]()
+        
+        for i in 1..<(element / subgroup.count) {
+            var temp = [Int]()
+            
+            for el in subgroup {
+                temp.append((el + i) % element)
+            }
+            result.append(temp)
+        }
+    
+        return result
+    }
+
 }
