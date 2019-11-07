@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		180BFC74234A113900843733 /* FindingDeductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180BFC73234A113900843733 /* FindingDeductionViewController.swift */; };
 		180BFC76234A2F2500843733 /* AntiderivativeRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180BFC75234A2F2500843733 /* AntiderivativeRootViewController.swift */; };
+		18179C95236C7FEA0049DF23 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18179C94236C7FEA0049DF23 /* Group.swift */; };
+		1849F6672372D9CD0086CC1C /* OrderGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1849F6662372D9CD0086CC1C /* OrderGroupViewController.swift */; };
 		18537E54236AD8FA00764ED5 /* Swift-Big-Number-Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18537E53236AD8FA00764ED5 /* Swift-Big-Number-Core.swift */; };
 		1875EB252327A50600B78775 /* MainPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875EB242327A50600B78775 /* MainPageTableViewController.swift */; };
 		1875EB272327A8C400B78775 /* MainPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875EB262327A8C400B78775 /* MainPageTableViewCell.swift */; };
@@ -32,6 +34,8 @@
 /* Begin PBXFileReference section */
 		180BFC73234A113900843733 /* FindingDeductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindingDeductionViewController.swift; sourceTree = "<group>"; };
 		180BFC75234A2F2500843733 /* AntiderivativeRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntiderivativeRootViewController.swift; sourceTree = "<group>"; };
+		18179C94236C7FEA0049DF23 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		1849F6662372D9CD0086CC1C /* OrderGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderGroupViewController.swift; sourceTree = "<group>"; };
 		18537E53236AD8FA00764ED5 /* Swift-Big-Number-Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Swift-Big-Number-Core.swift"; sourceTree = "<group>"; };
 		1875EB242327A50600B78775 /* MainPageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageTableViewController.swift; sourceTree = "<group>"; };
 		1875EB262327A8C400B78775 /* MainPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageTableViewCell.swift; sourceTree = "<group>"; };
@@ -120,6 +124,7 @@
 				180BFC75234A2F2500843733 /* AntiderivativeRootViewController.swift */,
 				18FCD971235360C700EEE8D0 /* ExponentialComparisonViewController.swift */,
 				18FCD96F23535ADD00EEE8D0 /* SymbolLegendreAndJacobiViewController.swift */,
+				1849F6662372D9CD0086CC1C /* OrderGroupViewController.swift */,
 			);
 			path = "Algorithms VC";
 			sourceTree = "<group>";
@@ -128,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				18B007782326CD2500F4D666 /* Euclid.swift */,
+				18179C94236C7FEA0049DF23 /* Group.swift */,
 				18ED69BD23337FD3008C3A23 /* Algorithms.swift */,
 			);
 			path = "Algorithms realization";
@@ -204,6 +210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18179C95236C7FEA0049DF23 /* Group.swift in Sources */,
 				18B007792326CD2500F4D666 /* Euclid.swift in Sources */,
 				180BFC76234A2F2500843733 /* AntiderivativeRootViewController.swift in Sources */,
 				18B007692326CC4500F4D666 /* ViewController.swift in Sources */,
@@ -216,6 +223,7 @@
 				18FCD97023535ADD00EEE8D0 /* SymbolLegendreAndJacobiViewController.swift in Sources */,
 				18A24D7F233CBBE600F1B7CE /* DecisionComparisonsViewController.swift in Sources */,
 				18ED69BE23337FD3008C3A23 /* Algorithms.swift in Sources */,
+				1849F6672372D9CD0086CC1C /* OrderGroupViewController.swift in Sources */,
 				18ED69C0233381D8008C3A23 /* EulerAndCDNPageViewController.swift in Sources */,
 				18B007672326CC4500F4D666 /* AppDelegate.swift in Sources */,
 				1875EB252327A50600B78775 /* MainPageTableViewController.swift in Sources */,

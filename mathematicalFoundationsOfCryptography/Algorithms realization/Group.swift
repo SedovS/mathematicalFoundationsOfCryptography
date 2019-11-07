@@ -52,12 +52,25 @@ class Group {
             return "Порядок всех элементов равен \(p), т.к \(p) простое число"
         }
         let modul = p
-        let dictP = Algorithms.canonicalDecompositionNumberToDictionary(modul)
+        //let dictP = Algorithms.canonicalDecompositionNumberToDictionary(modul)
         var result: String = ""
         var ord = 0 // ord a =
         
         for a in 1...modul {
-            
+        
+            for n in 1...modul {
+                
+                if Euclid().greatestCommonDivisor(a, modul) == 1 {
+                    ord = modul
+                    break
+                }
+                
+                if (a*n%modul) == 0 {
+                    ord = n
+                    break
+                }
+            }
+            /*
             for p in dictP {
                 
                 if Euclid().greatestCommonDivisor(a, modul) == 1 {
@@ -75,7 +88,7 @@ class Group {
                         
                     }
                 }
-            }
+            } */
             result += "ord\(a) = \(ord), "
             ord = 0
         }
