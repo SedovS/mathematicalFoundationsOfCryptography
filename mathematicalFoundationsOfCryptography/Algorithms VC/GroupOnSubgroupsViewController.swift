@@ -10,6 +10,14 @@ import UIKit
 
 class GroupOnSubgroupsViewController: UIViewController {
 
+    @IBOutlet weak var numberTextField: UITextField!
+    @IBOutlet weak var resultLabel: UILabel!
+    
+    @IBAction func additionButton(_ sender: UIButton) {
+    }
+    @IBAction func multiplacationButton(_ sender: UIButton) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
