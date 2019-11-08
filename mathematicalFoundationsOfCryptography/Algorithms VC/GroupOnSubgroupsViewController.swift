@@ -51,8 +51,18 @@ class GroupOnSubgroupsViewController: UIViewController {
         var result : String = ""
         
         for arrays in dict {
-            result += "Подгруппа "
-            result += "\(arrays.value) \n"
+            result += "Подгруппа = "
+            if arrays.value.count == 1 {
+                result += "\(arrays.value[0]) \n"
+            } else {
+                result += "\(arrays.value[0]) \n"
+                result += "Смежныe класс:"
+                for i in 1..<arrays.value.count {
+                    result += "\(arrays.value[i]), "
+                }
+                result.removeLast(2)
+                result += "\n"
+            }
         }
         resultLabel.text = result
     }
