@@ -182,6 +182,7 @@ class Group {
                     }
                     orders.append(n)
                     subgroups[a] = [helpSubgroupsOnAMultiplication(a: a, n: n, modul: element)]
+                    subgroups[a]! += formationRelatedClassesMultiplication(subgroup: helpSubgroupsOnAMultiplication(a: a, n: n, modul: element), element: element)
                     break
                 }
             }
@@ -201,6 +202,36 @@ class Group {
         }
         
         return array
+    }
+    
+    //Формирование смежных классов для каждой подгруппы по произведению
+    private static func formationRelatedClassesMultiplication(subgroup: [Int], element: Int) -> [[Int]] {
+        
+        var result = [[Int]]()
+        var count = 1
+        let funEuler = Algorithms.functionEulers(element)
+        let countRelatedClasses = funEuler / subgroup.count
+        
+        for i in 1..<element {
+            if count == countRelatedClasses {
+                break
+            }
+            
+            let euclid = Euclid()
+            if (euclid.greatestCommonDivisor(i, element) != 1 || subgroup.contains(i)){
+                continue
+            }
+                
+            var temp = [Int]()
+            
+            for el in subgroup {
+                temp.append((el * i) % element)
+            }
+            result.append(temp)
+            count += 1
+        }
+    
+        return result
     }
     
 }
