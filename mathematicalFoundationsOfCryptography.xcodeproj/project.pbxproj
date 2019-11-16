@@ -10,6 +10,7 @@
 		180BFC74234A113900843733 /* FindingDeductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180BFC73234A113900843733 /* FindingDeductionViewController.swift */; };
 		180BFC76234A2F2500843733 /* AntiderivativeRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180BFC75234A2F2500843733 /* AntiderivativeRootViewController.swift */; };
 		18179C95236C7FEA0049DF23 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18179C94236C7FEA0049DF23 /* Group.swift */; };
+		181FE3932380057C00F40D05 /* PrimeNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181FE3922380057C00F40D05 /* PrimeNumberViewController.swift */; };
 		1849F6672372D9CD0086CC1C /* OrderGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1849F6662372D9CD0086CC1C /* OrderGroupViewController.swift */; };
 		18537E54236AD8FA00764ED5 /* Swift-Big-Number-Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18537E53236AD8FA00764ED5 /* Swift-Big-Number-Core.swift */; };
 		1875EB252327A50600B78775 /* MainPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875EB242327A50600B78775 /* MainPageTableViewController.swift */; };
@@ -36,6 +37,7 @@
 		180BFC73234A113900843733 /* FindingDeductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindingDeductionViewController.swift; sourceTree = "<group>"; };
 		180BFC75234A2F2500843733 /* AntiderivativeRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntiderivativeRootViewController.swift; sourceTree = "<group>"; };
 		18179C94236C7FEA0049DF23 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		181FE3922380057C00F40D05 /* PrimeNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimeNumberViewController.swift; sourceTree = "<group>"; };
 		1849F6662372D9CD0086CC1C /* OrderGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderGroupViewController.swift; sourceTree = "<group>"; };
 		18537E53236AD8FA00764ED5 /* Swift-Big-Number-Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Swift-Big-Number-Core.swift"; sourceTree = "<group>"; };
 		1875EB242327A50600B78775 /* MainPageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageTableViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				18951AF52329392F001039A9 /* EuclidPageViewController.swift */,
+				181FE3922380057C00F40D05 /* PrimeNumberViewController.swift */,
 				18ED69BF233381D8008C3A23 /* EulerAndCDNPageViewController.swift */,
 				18A24D80233CDE4600F1B7CE /* InverseElementViewController.swift */,
 				18A24D7E233CBBE600F1B7CE /* DecisionComparisonsViewController.swift */,
@@ -215,6 +218,7 @@
 			files = (
 				18179C95236C7FEA0049DF23 /* Group.swift in Sources */,
 				18B007792326CD2500F4D666 /* Euclid.swift in Sources */,
+				181FE3932380057C00F40D05 /* PrimeNumberViewController.swift in Sources */,
 				18E1ACE12374A8BF00D70713 /* GroupOnSubgroupsViewController.swift in Sources */,
 				180BFC76234A2F2500843733 /* AntiderivativeRootViewController.swift in Sources */,
 				18B007692326CC4500F4D666 /* ViewController.swift in Sources */,
