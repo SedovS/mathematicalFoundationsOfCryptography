@@ -10,6 +10,30 @@ import Foundation
 
 class Algorithms {
     
+    //поиск простых числе
+    //решето Эратосфена
+    public static func sieveOfEratosthenes(number: Int) -> [Bool] {
+        
+        var dataArray = Array(repeating: true, count: number + 1)
+        dataArray[0] = false
+        dataArray[1] = false
+        
+        for currentPrime in 2...Int(sqrt(Double(number))) {
+            if !dataArray[currentPrime] {
+                continue
+            }
+            for multiple in stride(from: powerOf2(number: currentPrime), through: number, by: currentPrime){
+                dataArray[multiple] = false
+            }
+        }
+        
+        return dataArray
+    }
+
+    private static func powerOf2(number: Int) -> Int {
+        return number * number
+    }
+    
     //Каноническое разложение числа на простые множители
     //a - каноническое разложение числа на простые множители
     // a = p1^k1 * p2^k2 * ... * ps^ks
