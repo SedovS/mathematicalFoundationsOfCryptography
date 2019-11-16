@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zVg-nf-E3g">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zVg-nf-E3g">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -77,11 +77,94 @@
                         <segue destination="V8b-UE-8Kz" kind="show" identifier="mainPageToExponentialComparison" id="944-ac-TEj"/>
                         <segue destination="JNb-2F-oAG" kind="show" identifier="mainPageToOrderGroup" id="caR-Vp-xIA"/>
                         <segue destination="y3g-ZD-Rq1" kind="show" identifier="mainPageToGroupOnSubgroups" id="Lsr-1P-Qn2"/>
+                        <segue destination="JwA-hm-UH0" kind="show" identifier="mainPageToPrimeNumber" id="yLi-Qm-kyn"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cMG-co-Q3R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-481.15942028985512" y="249.45652173913047"/>
+        </scene>
+        <!--Prime Number View Controller-->
+        <scene sceneID="JJN-R2-tXB">
+            <objects>
+                <viewController id="JwA-hm-UH0" customClass="PrimeNumberViewController" customModule="mathematicalFoundationsOfCryptography" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bws-K6-ElG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Поиск простых чисел до числа n " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VWa-WY-ohA">
+                                <rect key="frame" x="20" y="60" width="374" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="19d-qe-mAP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Число n" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUF-ib-caO">
+                                <rect key="frame" x="97" y="160" width="100" height="28.666666666666657"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="znV-HK-HBm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YY3-7i-b38">
+                                <rect key="frame" x="217" y="157" width="140" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="jfN-U1-VFM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M32-nw-O3r">
+                                <rect key="frame" x="157" y="241" width="100" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="saQ-if-Kgg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Поиск"/>
+                                <connections>
+                                    <action selector="searchButton:" destination="JwA-hm-UH0" eventType="touchUpInside" id="VW8-0L-IIc"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dM1-qY-Hlp">
+                                <rect key="frame" x="20" y="333" width="374" height="256"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="256" id="UAg-Zw-inx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="VWa-WY-ohA" firstAttribute="top" secondItem="VWS-NG-Xd6" secondAttribute="top" constant="16" id="9JE-VP-Khi"/>
+                            <constraint firstItem="VWS-NG-Xd6" firstAttribute="trailing" secondItem="dM1-qY-Hlp" secondAttribute="trailing" constant="20" id="Ahk-GH-AnR"/>
+                            <constraint firstItem="YY3-7i-b38" firstAttribute="top" secondItem="VWa-WY-ohA" secondAttribute="bottom" constant="47" id="DGX-ah-Vvr"/>
+                            <constraint firstItem="dM1-qY-Hlp" firstAttribute="leading" secondItem="VWS-NG-Xd6" secondAttribute="leading" constant="20" id="LMn-IT-vfj"/>
+                            <constraint firstItem="rUF-ib-caO" firstAttribute="top" secondItem="VWa-WY-ohA" secondAttribute="bottom" constant="50" id="Mhk-pg-gAo"/>
+                            <constraint firstItem="M32-nw-O3r" firstAttribute="centerX" secondItem="bws-K6-ElG" secondAttribute="centerX" id="PXA-s8-TCD"/>
+                            <constraint firstItem="VWa-WY-ohA" firstAttribute="leading" secondItem="VWS-NG-Xd6" secondAttribute="leading" constant="20" id="XKO-dV-156"/>
+                            <constraint firstItem="YY3-7i-b38" firstAttribute="centerX" secondItem="bws-K6-ElG" secondAttribute="centerX" constant="80" id="aFL-j8-q6m"/>
+                            <constraint firstItem="VWS-NG-Xd6" firstAttribute="trailing" secondItem="VWa-WY-ohA" secondAttribute="trailing" constant="20" id="ilu-lN-3Zo"/>
+                            <constraint firstItem="rUF-ib-caO" firstAttribute="centerX" secondItem="bws-K6-ElG" secondAttribute="centerX" constant="-60" id="kXq-0U-ZuZ"/>
+                            <constraint firstItem="dM1-qY-Hlp" firstAttribute="top" secondItem="M32-nw-O3r" secondAttribute="bottom" constant="50" id="lsc-I3-h8X"/>
+                            <constraint firstItem="M32-nw-O3r" firstAttribute="top" secondItem="YY3-7i-b38" secondAttribute="bottom" constant="50" id="mjf-tx-eBW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VWS-NG-Xd6"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="p1k-Ca-fXa"/>
+                    <connections>
+                        <outlet property="numberTextField" destination="YY3-7i-b38" id="xyZ-dv-viv"/>
+                        <outlet property="resultLabel" destination="dM1-qY-Hlp" id="2nO-d6-qWM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LQ6-dG-Sq1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="247.82608695652175" y="-399.45652173913044"/>
         </scene>
         <!--Euclid Page View Controller-->
         <scene sceneID="Typ-qp-47n">
