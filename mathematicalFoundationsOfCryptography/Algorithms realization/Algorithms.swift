@@ -340,7 +340,7 @@ class Algorithms {
         
         exp = exp / d
         gamma = gamma / d
-        let newModul = modul / d
+        let newModul = betta / d
         
         if exp != 1 {
             guard let u = findInverseElement(exp, newModul) else {return "(\(exp),\(newModul))!=1, числа не взаимнопростые"}
